@@ -143,7 +143,7 @@ export const DATA = [
   {"id": "k028", "typ": "kuerzel", "kategorie": "Sonstiges", "begriff": "MS", "bedeutung": "Nasale Magensonde", "en": "nasogastric tube (through the nose)", "fr": "sonde nasogastrique"},
   {"id": "k029", "typ": "kuerzel", "kategorie": "Sonstiges", "begriff": "TM", "bedeutung": "Tumor", "en": "tumour", "fr": "tumeur"},
   {"id": "k030", "typ": "kuerzel", "kategorie": "Sonstiges", "begriff": "NNH", "bedeutung": "Nasennebenhöhle", "en": "paranasal sinus", "fr": "sinus de la face (sinus paranasal)"},
-  {"id": "k035", "typ": "kuerzel", "kategorie": "Sonstiges", "begriff": "Daib.", "bedeutung": "Diabetes", "en": "diabetes", "fr": "diabète"},
+  {"id": "k035", "typ": "kuerzel", "kategorie": "Sonstiges", "begriff": "Diab", "bedeutung": "Diabetes", "en": "diabetes", "fr": "diabète"},
   {"id": "k001", "typ": "kuerzel", "kategorie": "Untersuchung", "begriff": "KL/Audio", "bedeutung": "Knochenleitung/Audiogramm (Hörtest)", "en": "bone conduction / audiogram (hearing test)", "fr": "conduction osseuse / audiogramme (test auditif)"},
   {"id": "k002", "typ": "kuerzel", "kategorie": "Untersuchung", "begriff": "Tymp.", "bedeutung": "Impedanzmessung (Mittelohr), Tympanometrie", "en": "impedance measurement (middle ear), tympanometry", "fr": "mesure d'impédance (oreille moyenne), tympanométrie"},
   {"id": "k003", "typ": "kuerzel", "kategorie": "Untersuchung", "begriff": "Vesti", "bedeutung": "Gleichgewichtstest, Vestibulographie", "en": "balance test, vestibulography (vestibular testing)", "fr": "test d'équilibre, vestibulographie (bilan vestibulaire)"},

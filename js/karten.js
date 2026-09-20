@@ -83,9 +83,22 @@ function kAnswer(good) {
 }
 
 function kSummary() {
-  let s = t('k_sum', { g: K.good, n: K.cards.length });
-  if (K.again.length) s += t('k_sum_again', { list: K.again.map((e) => e.begriff).join(', ') });
-  $('k-summary').textContent = s;
+  $('k-summary').textContent = t('k_sum', { g: K.good, n: K.cards.length });
+  const w = $('k-wrong');
+  clear(w);
+  if (K.again.length) {
+    w.appendChild(el('p', 'muted small', t('q_review')));
+    K.again.forEach((e) => {
+      const d = el('div', 'wrong-item');
+      d.appendChild(el('strong', null, e.begriff));
+      d.appendChild(document.createTextNode(' – ' + e.bedeutung));
+      const tr = getTr(e);
+      if (tr) d.appendChild(el('div', 'muted small', tr));
+      w.appendChild(d);
+    });
+  } else {
+    w.appendChild(el('p', 'center', t('k_perfect')));
+  }
 }
 
 function kFinish() {
