@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HNO Station 6</title>
+<meta name="description" content="Glossar, Karteikarten und Quiz für die HNO-Station – offline nutzbar.">
+<meta name="theme-color" content="#7961a9">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="HNO">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>HNO Station 6 <span class="span_title">(Glossar - Miniapp)</span></h1>
+  <div class="top-r">
+    <button type="button" id="info-btn" class="icon-btn" aria-label="Über die App" data-aria="about_h" title="Über die App" data-title="about_h" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="10.5" x2="12" y2="16"/><circle cx="12" cy="7.5" r="1.15" fill="currentColor" stroke="none"/></svg>
+    </button>
+    <div class="lang" id="lang-switch" role="group" aria-label="Sprache und Übersetzung" data-aria="lang_group">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+      <span class="lang-seg">
+        <button type="button" data-lang="de" aria-pressed="true" title="Deutsch – ohne Übersetzung" data-title="lang_de_title" lang="de">DE</button>
+        <button type="button" data-lang="en" aria-pressed="false" title="Englisch: Oberfläche und Übersetzungen" data-title="lang_en_title" lang="en">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false" title="Französisch: Oberfläche und Übersetzungen" data-title="lang_fr_title" lang="fr">FR</button>
+      </span>
+    </div>
+    <span id="netstate" class="net" data-i="net_off" hidden>offline</span>
+  </div>
+</header>
+
+<dialog id="about-dialog" class="about-dialog" aria-labelledby="about-dialog-h">
+  <h2 id="about-dialog-h" data-i="about_h">Über die App</h2>
+  <p class="small" data-i="about_intro"></p>
+  <h3 class="small" data-i="about_how"></h3>
+  <ul class="small about-instructions">
+    <li data-html="about_glossary"></li>
+    <li data-html="about_cards"></li>
+    <li data-html="about_quiz"></li>
+    <li data-html="about_languages"></li>
+  </ul>
+  <p class="small" data-i="about_offline"></p>
+  <p class="small muted" data-i="about_disclaimer"></p>
+  <p class="small" data-html="about_feedback"></p>
+  <button type="button" id="about-close" class="btn primary" data-i="close">Schließen</button>
+</dialog>
+
+<main id="main">
+  <!-- GLOSSAR -->
+  <section id="view-glossar" class="view" aria-labelledby="tab-glossar">
+    <h2 class="view-title" data-i="g_h">Glossar</h2>
+    <div class="search">
+      <input id="q" type="search" placeholder="Suchen: Kürzel, Begriff, Bedeutung …" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Glossar durchsuchen" data-ph="search_ph" data-aria="search_aria">
+    </div>
+    <div class="chips" id="chips-glossar" role="group" aria-label="Kategorie" data-aria="cat_group"></div>
+    <p id="count" class="muted small"></p>
+    <div id="list"></div>
+  </section>
+
+  <!-- KARTEIKARTEN -->
+  <section id="view-karten" class="view" hidden aria-labelledby="tab-karten">
+    <div id="karten-setup">
+      <h2 class="view-title" data-i="k_h">Karteikarten</h2>
+      <label class="lbl" for="k-cat" data-i="cat_lbl">Kategorie</label>
+      <select id="k-cat"></select>
+      <label class="lbl" for="k-dir" data-i="dir_lbl">Richtung</label>
+      <select id="k-dir">
+        <option value="fwd">Begriff → Bedeutung</option>
+        <option value="rev">Bedeutung → Begriff</option>
+        <option value="mix">Gemischt</option>
+      </select>
+      <label class="lbl" for="k-mode" data-i="k_mode">Auswahl</label>
+      <select id="k-mode">
+        <option value="open" data-i="mode_open">Noch nicht sicher gewusst (empfohlen)</option>
+        <option value="all" data-i="mode_all">Alle Karten</option>
+      </select>
+      <button id="k-start" class="btn primary" data-i="start">Starten</button>
+      <p id="k-info" class="muted small"></p>
+    </div>
+    <div id="karten-run" hidden>
+      <div class="progressbar"><div id="k-bar"></div></div>
+      <p class="muted small center" id="k-pos"></p>
+      <button id="card" class="card" aria-live="polite">
+        <span class="card-label" id="card-label"></span>
+        <span class="card-text" id="card-text"></span>
+        <span class="card-sub" id="card-sub" hidden></span>
+        <span class="card-hint" id="card-hint" data-i="flip_hint">Tippen zum Umdrehen</span>
+      </button>
+      <div id="k-actions" class="row" hidden>
+        <button id="k-again" class="btn bad" data-i="again">Nochmal</button>
+        <button id="k-know" class="btn good" data-i="know">Gewusst</button>
+      </div>
+      <button id="k-stop" class="btn link" data-i="stop">Beenden</button>
+    </div>
+    <div id="karten-done" hidden>
+      <h2 data-i="done_h">Fertig</h2>
+      <p id="k-summary"></p>
+      <button id="k-restart" class="btn primary" data-i="back_setup">Zurück zur Auswahl</button>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="view" hidden aria-labelledby="tab-quiz">
+    <div id="quiz-setup">
+      <h2 class="view-title" data-i="q_h">Quiz</h2>
+      <label class="lbl" for="q-cat" data-i="cat_lbl">Kategorie</label>
+      <select id="q-cat"></select>
+      <label class="lbl" for="q-dir" data-i="dir_lbl">Richtung</label>
+      <select id="q-dir">
+        <option value="fwd">Begriff → Bedeutung</option>
+        <option value="rev">Bedeutung → Begriff</option>
+        <option value="mix">Gemischt</option>
+      </select>
+      <label class="lbl" for="q-len" data-i="q_len">Anzahl Fragen</label>
+      <select id="q-len">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+      </select>
+      <button id="q-start" class="btn primary" data-i="q_start">Quiz starten</button>
+    </div>
+    <div id="quiz-run" hidden>
+      <div class="progressbar"><div id="q-bar"></div></div>
+      <p class="muted small center" id="q-pos"></p>
+      <p class="muted small center" id="q-prompt-label"></p>
+      <h2 id="q-question" class="question"></h2>
+      <div id="q-options" class="options"></div>
+      <p id="q-feedback" class="feedback" role="status"></p>
+      <p id="q-tr" class="qtr" hidden></p>
+      <button id="q-next" class="btn primary" hidden>Weiter</button>
+    </div>
+    <div id="quiz-done" hidden>
+      <h2 data-i="q_done_h">Ergebnis</h2>
+      <p id="q-score" class="score"></p>
+      <div id="q-wrong"></div>
+      <button id="q-restart" class="btn primary" data-i="q_restart">Neues Quiz</button>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section id="view-info" class="view" hidden aria-labelledby="tab-info">
+    <h2 class="view-title" data-i="info_h">Fortschritt</h2>
+    <div id="stats"></div>
+    <button id="reset" class="btn bad-outline" data-i="reset">Lernfortschritt zurücksetzen</button>
+  </section>
+</main>
+
+<nav class="tabs" role="tablist" aria-label="Bereiche" data-aria="tabs_aria">
+  <button role="tab" id="tab-glossar" data-view="glossar" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5zm2 0v11.2c.3-.1.6-.2 1-.2h10V5H6z"/></svg><span data-i="tab_glossar">Glossar</span></button>
+  <button role="tab" id="tab-karten" data-view="karten" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-1H5a2 2 0 0 1-2-2V7zm4 9V10a2 2 0 0 1 2-2h6V7H5v7h2z"/></svg><span data-i="tab_karten">Karten</span></button>
+  <button role="tab" id="tab-quiz" data-view="quiz" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-2h2v2zm1.8-6.1-.9.9c-.6.6-.9 1-.9 2.2h-2v-.5c0-1 .4-1.9 1.1-2.6l1.2-1.3c.3-.3.5-.8.5-1.2 0-1.1-.9-2-2-2s-2 .9-2 2H8a4 4 0 1 1 8 0c0 .9-.4 1.7-1.2 2.5z"/></svg><span data-i="tab_quiz">Quiz</span></button>
+  <button role="tab" id="tab-info" data-view="info" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-8h3v8H5zm5.5 0V4h3v16h-3zM16 20V9h3v11h-3z"/></svg><span data-i="tab_info">Fortschritt</span></button>
+</nav>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon?
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (falls lokal Tools wie `npx serve` Abhängigkeiten installieren)
+node_modules/
+
+# Lokale Umgebungsdateien
+.env
+.env.local
+
+# Interne Korrekturnotizen
+KORREKTUREN.md
