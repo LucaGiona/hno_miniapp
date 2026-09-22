@@ -192,6 +192,15 @@ h2 {
   font-size: 0.5em;
 }
 
+/* Mobil: Zusatz in eigener Zeile unter dem Titel statt mittendrin umzubrechen. */
+@media (max-width:600px) {
+  .top h1 .span_title {
+    display: block;
+    margin-top: .15rem;
+    font-weight: 500
+  }
+}
+
 .top-r {
   display: flex;
   align-items: center;
