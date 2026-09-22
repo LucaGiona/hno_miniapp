@@ -2,7 +2,11 @@
 
 Lern-App für die HNO-Station: Glossar mit Suche, Karteikarten und Quiz. Nach dem ersten Laden läuft alles offline. Reines HTML/CSS/JavaScript, kein Build-Schritt, keine Abhängigkeiten.
 
-Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worker-Cache `hno-lernkarten-v0.3.5`.
+Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worker-Cache `hno-lernkarten-v0.3.35`.
+
+**App öffnen:** [lucagiona.github.io/hno_miniapp](https://lucagiona.github.io/hno_miniapp/) oder QR-Code scannen:
+
+![QR-Code zur App](qr-code.png)
 
 ## Inhalt
 
@@ -12,6 +16,8 @@ Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worke
 | `js/` | JavaScript als ES-Module: `main.js` (Einstieg), `glossar.js`, `karten.js`, `quiz.js`, `stats.js`, `nav.js`, `pwa.js`, `about.js` (Info-Dialog), `storage.js`, `catalog.js`, `utils.js` |
 | `js/data.js` | alle 150 Einträge (54 Kürzel, 96 Fachbegriffe) inkl. Übersetzungen, hier ergänzen/ändern |
 | `js/lang.js` | Sprach-Schalter (DE / EN / FR) |
+| `js/mobile-selects.js` | Auswahl-Listen (Karten/Quiz) mit umbrechenden Texten auf schmalen Bildschirmen |
+| `qr-code.png` | QR-Code zur veröffentlichten App (GitHub Pages) |
 | `js/i18n.js` | alle Oberflächentexte und Kategorienamen in DE/EN/FR |
 | `sw.js` | Service Worker für den Offline-Betrieb |
 | `manifest.webmanifest`, `icons/` | Installierbarkeit auf dem Homescreen |
@@ -30,9 +36,9 @@ ES-Module werden von Browsern über `file://` blockiert. Ein Doppelklick auf `in
 
 **Offline prüfen:** Seite einmal laden, in den Chrome-DevTools unter *Application → Service Workers* den Haken „Offline" setzen und neu laden. Oder unter *Application → Manifest* die Installierbarkeit prüfen.
 
-## Auf dem Handy testen
+## Auf dem Handy nutzen
 
-Das Handy braucht HTTPS (Ausnahme: localhost). Am einfachsten: Ordner bei Netlify Drop (app.netlify.com/drop) hochziehen oder per GitHub Pages veröffentlichen. Alle Pfade sind relativ, die App läuft daher auch in einem Unterordner.
+Die App ist bereits über GitHub Pages veröffentlicht: [lucagiona.github.io/hno_miniapp](https://lucagiona.github.io/hno_miniapp/) bzw. den QR-Code oben scannen. Alle Pfade sind relativ, die App läuft daher auch in einem Unterordner.
 
 - **iPhone (Safari):** Teilen → „Zum Home-Bildschirm".
 - **Android (Chrome):** Menü → „App installieren".
@@ -67,6 +73,6 @@ Jede Gruppe hat eine eigene Farbe. Die Tabelle steht oben in `js/catalog.js` (`C
 - Auf dem iPhone kann Safari Website-Daten nach längerer Nichtnutzung löschen. Dann ist der Fortschritt weg, die App lädt sich beim nächsten Online-Start neu.
 - Nur Lernhilfe; ersetzt keine Dienstanweisungen oder Standards des Hauses.
 
-## Versionsverwaltung
+## Versionsverwaltung & Veröffentlichung
 
-Das Projekt liegt lokal noch ohne Git vor. `.gitignore` ist bereits für macOS-Entwicklung vorbereitet (`.DS_Store` u. Ä.); mit `git init` lässt sich jederzeit ein Repository starten.
+Das Projekt liegt in Git vor, Remote ist `github.com/LucaGiona/hno_miniapp`. Ein Push auf den veröffentlichten Branch aktualisiert automatisch die GitHub-Pages-Version unter obigem Link (nach jeder Änderung Cache-Version in `sw.js` hochzählen, siehe oben).
