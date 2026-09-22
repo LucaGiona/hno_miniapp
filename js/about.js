@@ -1,5 +1,6 @@
 /* Info-Dialog "Über die App", erreichbar über den Info-Button oben in der Kopfzeile. */
 import { $ } from './utils.js';
+import { t } from './i18n.js';
 
 export function initAbout() {
   const btn = $('info-btn');
@@ -10,4 +11,20 @@ export function initAbout() {
   btn.addEventListener('click', () => dialog.showModal());
   if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+
+  const shareBtn = $('about-share');
+  const shareUrl = 'https://lucagiona.github.io/hno_miniapp/';
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      if (navigator.share) {
+        try { await navigator.share({ title: document.title, url: shareUrl }); return; } catch (e) { /* abgebrochen: nichts weiter tun */ return; }
+      }
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        const original = shareBtn.textContent;
+        shareBtn.textContent = t('about_share_copied');
+        setTimeout(() => { shareBtn.textContent = original; }, 1600);
+      } catch (e) { /* Zwischenablage nicht verfügbar: Link steht im Dialog zum Antippen/Kopieren bereit */ }
+    });
+  }
 }

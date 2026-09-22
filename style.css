@@ -996,6 +996,42 @@ input[type=search]:focus,select:focus,.btn:focus-visible,.card:focus-visible,.op
   overflow-wrap: anywhere
 }
 
+.share-app {
+  text-align: center;
+  margin: 1rem 0;
+  padding: .9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg)
+}
+
+.share-app h3 {
+  margin: 0 0 .3rem
+}
+
+.share-app p {
+  margin: .4rem 0
+}
+
+.qr-code {
+  display: block;
+  margin: .7rem auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px
+}
+
+.share-link a {
+  word-break: break-all
+}
+
+.share-app .btn {
+  margin-top: .6rem;
+  width: auto;
+  display: inline-block;
+  padding: .6rem 1.4rem
+}
+
 /* Mobile Selects: vollständige Texte statt abgeschnittener Einzeiler. */
 select {
   min-width: 0;

@@ -62,6 +62,10 @@ const S = {
     about_quiz: "<strong>Quiz:</strong> Teste dein Wissen und wiederhole Fragen, die noch nicht sicher sitzen.",
     about_languages: "<strong>Sprachen:</strong> Mit DE / EN / FR wechselst du die Sprache der Oberfläche und blendest Übersetzungen ein. Bei Karteikarten und Quiz kannst du zusätzlich „Übersetzung → Deutsch“ üben. Die deutschen Kürzel und Fachbegriffe bleiben erhalten.",
     about_offline: "Nach dem ersten vollständigen Laden kannst du die Lernhilfe auch ohne Internet nutzen. Dein Lernfortschritt wird nur auf diesem Gerät gespeichert.",
+    about_share_h: "Weiterempfehlen",
+    about_share_text: "Über diesen Link oder den QR-Code lässt sich die App an Kolleginnen und Kollegen weitergeben.",
+    about_share_button: "Teilen",
+    about_share_copied: "Link kopiert!",
     about_disclaimer: "Die englischen und französischen Übersetzungen sind Entwürfe und noch nicht fachlich geprüft. Die Lernhilfe ersetzt keine Dienstanweisungen oder Standards deines Hauses.",
     about_feedback: "Du hast Feedback, möchtest einen Begriff ergänzen oder einen Fehler melden? Schreib an <a href=\"mailto:luca@senzproduction.com\">luca@senzproduction.com</a>.",
     close: 'Schließen'
@@ -125,6 +129,10 @@ const S = {
     about_quiz: "<strong>Quiz:</strong> Test your knowledge and revisit questions you are not yet confident about.",
     about_languages: "<strong>Languages:</strong> Use DE / EN / FR to change the interface language and display translations. Flashcards and quizzes also let you practise “Translation → German”. The German abbreviations and technical terms remain available.",
     about_offline: "Once the app has fully loaded for the first time, you can also use it without an internet connection. Your learning progress is stored only on this device.",
+    about_share_h: "Share this app",
+    about_share_text: "Use this link or QR code to pass the app on to colleagues.",
+    about_share_button: "Share",
+    about_share_copied: "Link copied!",
     about_disclaimer: "The English and French translations are drafts and have not yet been professionally reviewed. This learning aid does not replace your institution’s operating instructions or standards.",
     about_feedback: "Have feedback, want to add a term or report an error? Email <a href=\"mailto:luca@senzproduction.com\">luca@senzproduction.com</a>.",
     close: 'Close'
@@ -188,6 +196,10 @@ const S = {
     about_quiz: "<strong>Quiz :</strong> Teste tes connaissances et reprends les questions que tu ne maîtrises pas encore.",
     about_languages: "<strong>Langues :</strong> Avec DE / EN / FR, change la langue de l’interface et affiche les traductions. Les cartes mémoire et les quiz permettent aussi de s’entraîner dans le sens « Traduction → Allemand ». Les sigles et termes techniques allemands restent disponibles.",
     about_offline: "Après le premier chargement complet, tu peux aussi utiliser cette aide sans connexion internet. Ta progression est enregistrée uniquement sur cet appareil.",
+    about_share_h: "Partager l’application",
+    about_share_text: "Ce lien ou ce QR-code permet de transmettre l’application à des collègues.",
+    about_share_button: "Partager",
+    about_share_copied: "Lien copié !",
     about_disclaimer: "Les traductions anglaises et françaises sont des ébauches et n’ont pas encore été vérifiées par des professionnels. Cette aide à l’apprentissage ne remplace pas les consignes ni les standards de ton établissement.",
     about_feedback: "Tu as un retour à partager, un terme à ajouter ou une erreur à signaler ? Écris à <a href=\"mailto:luca@senzproduction.com\">luca@senzproduction.com</a>.",
     close: 'Fermer'
