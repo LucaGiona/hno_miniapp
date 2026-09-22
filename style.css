@@ -1032,6 +1032,37 @@ input[type=search]:focus,select:focus,.btn:focus-visible,.card:focus-visible,.op
   padding: .6rem 1.4rem
 }
 
+.update-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));
+  z-index: 9;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .8rem;
+  padding: .7rem .9rem .7rem 1rem;
+  background: var(--brand);
+  color: var(--brand-ink);
+  font-size: .85rem;
+  box-shadow: 0 -6px 18px rgba(0,0,0,.18)
+}
+
+.update-banner button {
+  flex: none;
+  border: none;
+  background: var(--brand-ink);
+  color: var(--brand);
+  font: inherit;
+  font-weight: 700;
+  padding: .45rem .9rem;
+  border-radius: 99px;
+  cursor: pointer
+}
+
 /* Mobile Selects: vollständige Texte statt abgeschnittener Einzeiler. */
 select {
   min-width: 0;

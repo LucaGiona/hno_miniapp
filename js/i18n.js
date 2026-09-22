@@ -66,6 +66,8 @@ const S = {
     about_share_text: "Über diesen Link oder den QR-Code lässt sich die App an Kolleginnen und Kollegen weitergeben.",
     about_share_button: "Teilen",
     about_share_copied: "Link kopiert!",
+    update_available: "Neue Version verfügbar.",
+    update_reload: "Aktualisieren",
     about_disclaimer: "Die englischen und französischen Übersetzungen sind Entwürfe und noch nicht fachlich geprüft. Die Lernhilfe ersetzt keine Dienstanweisungen oder Standards deines Hauses.",
     about_feedback: "Du hast Feedback, möchtest einen Begriff ergänzen oder einen Fehler melden? Schreib an <a href=\"mailto:luca@senzproduction.com\">luca@senzproduction.com</a>.",
     close: 'Schließen'
@@ -133,6 +135,8 @@ const S = {
     about_share_text: "Use this link or QR code to pass the app on to colleagues.",
     about_share_button: "Share",
     about_share_copied: "Link copied!",
+    update_available: "A new version is available.",
+    update_reload: "Update",
     about_disclaimer: "The English and French translations are drafts and have not yet been professionally reviewed. This learning aid does not replace your institution’s operating instructions or standards.",
     about_feedback: "Have feedback, want to add a term or report an error? Email <a href=\"mailto:luca@senzproduction.com\">luca@senzproduction.com</a>.",
     close: 'Close'
@@ -200,6 +204,8 @@ const S = {
     about_share_text: "Ce lien ou ce QR-code permet de transmettre l’application à des collègues.",
     about_share_button: "Partager",
     about_share_copied: "Lien copié !",
+    update_available: "Une nouvelle version est disponible.",
+    update_reload: "Mettre à jour",
     about_disclaimer: "Les traductions anglaises et françaises sont des ébauches et n’ont pas encore été vérifiées par des professionnels. Cette aide à l’apprentissage ne remplace pas les consignes ni les standards de ton établissement.",
     about_feedback: "Tu as un retour à partager, un terme à ajouter ou une erreur à signaler ? Écris à <a href=\"mailto:luca@senzproduction.com\">luca@senzproduction.com</a>.",
     close: 'Fermer'
