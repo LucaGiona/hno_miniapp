@@ -22,6 +22,7 @@ function buildChips() {
 
 export function renderList() {
   const q = $('q').value.trim();
+  $('view-glossar').classList.toggle('searching', !!q);
   const tokens = q ? norm(q).split(/\s+/).filter(Boolean) : [];
   const rawTokens = q ? q.split(/\s+/).filter(Boolean) : [];
   let items = inCat(gCat).map((e) => ({ e, nt: norm(e.begriff), nd: norm(e.bedeutung), ntr: norm(getTr(e)) }));

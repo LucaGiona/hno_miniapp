@@ -396,6 +396,21 @@ input[type=search]:focus,select:focus,.btn:focus-visible,.card:focus-visible,.op
   margin-bottom: 2px
 }
 
+/* Mobil: beim Tippen im Suchfeld sollen die Treffer sofort sichtbar sein,
+   ohne dass man erst an den Kategorie-Buttons vorbeischeiben muss. */
+@media (max-width:600px) {
+  #view-glossar {
+    display: flex;
+    flex-direction: column
+  }
+  #view-glossar .view-title { order: 0 }
+  #view-glossar .search { order: 1 }
+  #view-glossar #chips-glossar { order: 2 }
+  #view-glossar #count { order: 3 }
+  #view-glossar #list { order: 4 }
+  #view-glossar.searching #chips-glossar { order: 5 }
+}
+
 .chip {
   flex: none;
   padding: .45rem .85rem;
