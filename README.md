@@ -2,7 +2,7 @@
 
 Lern-App für die HNO-Station: Glossar mit Suche, Karteikarten und Quiz. Nach dem ersten Laden läuft alles offline. Reines HTML/CSS/JavaScript, kein Build-Schritt, keine Abhängigkeiten.
 
-Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worker-Cache `hno-lernkarten-v0.3.36`.
+Aktueller Datenstand: 160 Einträge (60 Kürzel, 96 Fachbegriffe), Service-Worker-Cache `hno-lernkarten-v0.3.38`.
 
 **App öffnen:** [lucagiona.github.io/hno_miniapp](https://lucagiona.github.io/hno_miniapp/) oder QR-Code scannen:
 
@@ -14,7 +14,7 @@ Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worke
 |---|---|
 | `index.html`, `style.css` | die App |
 | `js/` | JavaScript als ES-Module: `main.js` (Einstieg), `glossar.js`, `karten.js`, `quiz.js`, `nav.js`, `pwa.js`, `about.js` (Info-Dialog), `storage.js`, `catalog.js`, `utils.js` |
-| `js/data.js` | alle 150 Einträge (54 Kürzel, 96 Fachbegriffe) inkl. Übersetzungen, hier ergänzen/ändern |
+| `js/data.js` | alle 160 Einträge (60 Kürzel, 96 Fachbegriffe) inkl. Übersetzungen, hier ergänzen/ändern |
 | `js/lang.js` | Sprach-Schalter (DE / EN / FR) |
 | `js/mobile-selects.js` | Auswahl-Listen (Karten/Quiz) mit umbrechenden Texten auf schmalen Bildschirmen |
 | `qr-code.png` | QR-Code zur veröffentlichten App (GitHub Pages) |
