@@ -871,7 +871,7 @@ input[type=search]:focus,select:focus,.btn:focus-visible,.card:focus-visible,.op
   bottom: 0;
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(3,1fr);
   max-width: 720px;
   margin: 0 auto;
   height: calc(var(--nav-h) + env(safe-area-inset-bottom));
