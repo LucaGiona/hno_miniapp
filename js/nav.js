@@ -4,7 +4,7 @@ import { $ } from './utils.js';
 const VIEWS = ['glossar', 'karten', 'quiz'];
 
 export function initNav(onShow = {}) {
-  const tabs = document.querySelectorAll('.tabs button');
+  const tabs = document.querySelectorAll('.tabs button[data-view]');
 
   function show(view) {
     VIEWS.forEach((v) => { $('view-' + v).hidden = v !== view; });
