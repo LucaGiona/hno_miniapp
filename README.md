@@ -2,7 +2,7 @@
 
 Lern-App für die HNO-Station: Glossar mit Suche, Karteikarten und Quiz. Nach dem ersten Laden läuft alles offline. Reines HTML/CSS/JavaScript, kein Build-Schritt, keine Abhängigkeiten.
 
-Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worker-Cache `hno-lernkarten-v0.3.35`.
+Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worker-Cache `hno-lernkarten-v0.3.36`.
 
 **App öffnen:** [lucagiona.github.io/hno_miniapp](https://lucagiona.github.io/hno_miniapp/) oder QR-Code scannen:
 
@@ -13,7 +13,7 @@ Aktueller Datenstand: 150 Einträge (54 Kürzel, 96 Fachbegriffe), Service-Worke
 | Datei | Zweck |
 |---|---|
 | `index.html`, `style.css` | die App |
-| `js/` | JavaScript als ES-Module: `main.js` (Einstieg), `glossar.js`, `karten.js`, `quiz.js`, `stats.js`, `nav.js`, `pwa.js`, `about.js` (Info-Dialog), `storage.js`, `catalog.js`, `utils.js` |
+| `js/` | JavaScript als ES-Module: `main.js` (Einstieg), `glossar.js`, `karten.js`, `quiz.js`, `nav.js`, `pwa.js`, `about.js` (Info-Dialog), `storage.js`, `catalog.js`, `utils.js` |
 | `js/data.js` | alle 150 Einträge (54 Kürzel, 96 Fachbegriffe) inkl. Übersetzungen, hier ergänzen/ändern |
 | `js/lang.js` | Sprach-Schalter (DE / EN / FR) |
 | `js/mobile-selects.js` | Auswahl-Listen (Karten/Quiz) mit umbrechenden Texten auf schmalen Bildschirmen |
@@ -66,6 +66,12 @@ Alle Übersetzungen (Begriffe und Oberfläche) sind Entwürfe und nicht geprüft
 ## Farben
 
 Jede Gruppe hat eine eigene Farbe. Die Tabelle steht oben in `js/catalog.js` (`COLORS`): Farbton, Sättigung, Helligkeit und ob die Schrift auf der Vollfarbe dunkel sein soll. Hell/Dunkel-Modus werden automatisch abgeleitet (`style.css`, Klasse `.cat`). Neue Gruppen ohne Eintrag erscheinen in neutralem Grau.
+
+## Fortschritt-Ansicht (ausgelagert)
+
+Der Fortschritt-Tab (Übersicht je Kategorie + „Lernfortschritt zurücksetzen") ist vorerst aus der App entfernt, weil er derzeit nicht gebraucht wird. Der Code (`js/stats.js`, der zugehörige Ausschnitt in `index.html`/`nav.js`/`main.js`) liegt unverändert im Branch `feature/fortschritt` und kann von dort zurückgeholt werden, sobald er wieder gebraucht wird.
+
+Die Speicherung selbst (`js/storage.js`) läuft im Hintergrund weiter: der grüne Punkt im Glossar bei gelernten Einträgen und die Karteikarten-Auswahl „Noch nicht sicher gewusst" funktionieren weiterhin, nur die Übersicht und der Reset-Button fehlen aktuell in der Oberfläche.
 
 ## Hinweise
 

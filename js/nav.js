@@ -1,7 +1,7 @@
 /* Tab-Navigation. onShow: { [view]: () => void } wird beim Wechsel aufgerufen. */
 import { $ } from './utils.js';
 
-const VIEWS = ['glossar', 'karten', 'quiz', 'info'];
+const VIEWS = ['glossar', 'karten', 'quiz'];
 
 export function initNav(onShow = {}) {
   const tabs = document.querySelectorAll('.tabs button');

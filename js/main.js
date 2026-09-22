@@ -9,11 +9,10 @@ import { initNav } from './nav.js';
 import { initGlossar, refreshGlossar } from './glossar.js';
 import { initKarten, updateKInfo, refreshKarten } from './karten.js';
 import { initQuiz, refreshQuiz } from './quiz.js';
-import { initStats, renderStats } from './stats.js';
 import { initPwa } from './pwa.js';
 import { initAbout } from './about.js';
 
-const VERSION = '0.3.35';
+const VERSION = '0.3.36';
 
 /* Alles sprachabhängige neu beschriften (Start und Sprachwechsel) */
 function relabel() {
@@ -23,7 +22,6 @@ function relabel() {
   fillDirSelect($('k-dir'));
   fillDirSelect($('q-dir'));
   refreshGlossar();
-  renderStats();
   updateKInfo();
   refreshKarten();
   refreshQuiz();
@@ -31,11 +29,10 @@ function relabel() {
 
 load();
 initLang(relabel);
-initNav({ info: renderStats, karten: updateKInfo });
+initNav({ karten: updateKInfo });
 initGlossar();
 initKarten();
 initQuiz();
-initStats(refreshGlossar);
 initPwa();
 initAbout();
 relabel();
