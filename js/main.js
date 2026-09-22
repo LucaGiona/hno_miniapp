@@ -13,7 +13,7 @@ import { initHeaderHeight } from './header.js';
 import { initPwa } from './pwa.js';
 import { initAbout } from './about.js';
 
-const VERSION = '0.3.45';
+const VERSION = '0.3.46';
 
 /* Alles sprachabhängige neu beschriften (Start und Sprachwechsel) */
 function relabel() {

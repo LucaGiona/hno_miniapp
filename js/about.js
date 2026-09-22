@@ -8,7 +8,14 @@ export function initAbout() {
   const closeBtn = $('about-close');
   if (!btn || !dialog) return;
 
-  btn.addEventListener('click', () => dialog.showModal());
+  btn.addEventListener('click', () => {
+    dialog.showModal();
+    // Modal soll oben aufgehen: sonst fokussiert der Browser den ersten Link im
+    // Dialog (den Teilen-Link weiter unten) und scrollt automatisch dorthin.
+    dialog.scrollTop = 0;
+    const heading = $('about-dialog-h');
+    if (heading) heading.focus({ preventScroll: true });
+  });
   if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
 

@@ -930,6 +930,19 @@ input[type=search]:focus,select:focus,.btn:focus-visible,.card:focus-visible,.op
   fill: currentColor
 }
 
+/* Info-Icon ist ein Strichsymbol (Kreis + „i"), nicht gefuellt wie die anderen Tab-Icons. */
+#info-btn svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round
+}
+
+#info-btn svg circle:last-child {
+  fill: currentColor;
+  stroke: none
+}
+
 .tabs button[aria-selected=true] {
   color: var(--brand);
   font-weight: 650;
