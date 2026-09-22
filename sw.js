@@ -1,6 +1,6 @@
 /* Service Worker – Offline-Cache für die HNO Lernkarten.
    Bei jeder Änderung an einer App-Datei CACHE hochzählen, damit Geräte die neue Version holen. */
-const CACHE = 'hno-lernkarten-v0.3.41';
+const CACHE = 'hno-lernkarten-v0.3.43';
 const ASSETS = [
   './',
   'index.html',
@@ -18,6 +18,7 @@ const ASSETS = [
   'js/karten.js',
   'js/quiz.js',
   'js/pwa.js',
+  'js/header.js',
   'js/about.js',
   'qr-code.png',
   'manifest.webmanifest',

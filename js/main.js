@@ -9,10 +9,11 @@ import { initNav } from './nav.js';
 import { initGlossar, refreshGlossar } from './glossar.js';
 import { initKarten, updateKInfo, refreshKarten } from './karten.js';
 import { initQuiz, refreshQuiz } from './quiz.js';
+import { initHeaderHeight } from './header.js';
 import { initPwa } from './pwa.js';
 import { initAbout } from './about.js';
 
-const VERSION = '0.3.41';
+const VERSION = '0.3.43';
 
 /* Alles sprachabhängige neu beschriften (Start und Sprachwechsel) */
 function relabel() {
@@ -35,6 +36,7 @@ initKarten();
 initQuiz();
 initPwa();
 initAbout();
+initHeaderHeight();
 relabel();
 
 initMobileSelects();
