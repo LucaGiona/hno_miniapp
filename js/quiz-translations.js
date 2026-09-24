@@ -1,5 +1,6 @@
 /* EN/FR-Übersetzungen der festen Quizfragen aus quiz-questions.js. Schlüssel = Frage-ID.
-   Fehlt eine Übersetzung (oder ein Feld), fällt die Anzeige automatisch auf Deutsch zurück. */
+   Fehlt eine Übersetzung (oder ein Feld), fällt die Anzeige automatisch auf Deutsch zurück.
+   Bei Kürzel-Fragen beginnt die Erklärung mit der deutschen Langform (Quelle: js/data.js), z. B. "V.a." -> "Verdacht auf". */
 export const QUIZ_TRANSLATIONS = {
   "q-f009": {
     "en": {
@@ -384,7 +385,7 @@ export const QUIZ_TRANSLATIONS = {
         "Imaging using reflected ultrasound waves",
         "Imaging using an inserted camera"
       ],
-      "explanation": "Computed tomography uses X-rays. MRI works with magnetic fields and radiofrequency pulses."
+      "explanation": "\"CT\" is short for the German \"Computertomografie\". Computed tomography uses X-rays. MRI works with magnetic fields and radiofrequency pulses."
     },
     "fr": {
       "question": "Quelle méthode se cache derrière la TDM (CT) ?",
@@ -394,7 +395,7 @@ export const QUIZ_TRANSLATIONS = {
         "Une imagerie utilisant des ondes ultrasonores réfléchies",
         "Une imagerie utilisant une caméra introduite dans le corps"
       ],
-      "explanation": "La tomodensitométrie utilise des rayons X. L'IRM fonctionne avec des champs magnétiques et des impulsions de radiofréquence."
+      "explanation": "« CT » est l'abréviation de l'allemand « Computertomografie ». La tomodensitométrie utilise des rayons X. L'IRM fonctionne avec des champs magnétiques et des impulsions de radiofréquence."
     }
   },
   "q-k046": {
@@ -406,7 +407,7 @@ export const QUIZ_TRANSLATIONS = {
         "Ultrasound waves from a transducer",
         "Visible light from an endoscope"
       ],
-      "explanation": "Magnetic resonance imaging does not use X-radiation."
+      "explanation": "\"MRT\" is short for the German \"Magnetresonanztomographie\". Magnetic resonance imaging does not use X-radiation."
     },
     "fr": {
       "question": "Quel principe physique utilise l'IRM ?",
@@ -416,7 +417,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des ondes ultrasonores issues d'une sonde",
         "De la lumière visible issue d'un endoscope"
       ],
-      "explanation": "L'imagerie par résonance magnétique n'utilise pas de rayonnement X."
+      "explanation": "« MRT » est l'abréviation de l'allemand « Magnetresonanztomographie ». L'imagerie par résonance magnétique n'utilise pas de rayonnement X."
     }
   },
   "q-k047": {
@@ -428,7 +429,7 @@ export const QUIZ_TRANSLATIONS = {
         "Sound reflections and electrical cardiac activity",
         "Magnetic cross-sectional images and endoscopic images"
       ],
-      "explanation": "PET shows the distribution of a radioactive tracer; CT provides anatomical cross-sectional images."
+      "explanation": "\"PET-CT\" is short for the German \"Positronen-Emissions-Tomografie mit CT\". PET shows the distribution of a radioactive tracer; CT provides anatomical cross-sectional images."
     },
     "fr": {
       "question": "Quelles informations combine une TEP-TDM (PET-CT) ?",
@@ -438,7 +439,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des réflexions acoustiques et l'activité électrique cardiaque",
         "Des images magnétiques en coupes et des images endoscopiques"
       ],
-      "explanation": "La TEP montre la distribution d'un traceur radioactif ; la TDM fournit des images anatomiques en coupes."
+      "explanation": "« PET-CT » est l'abréviation de l'allemand « Positronen-Emissions-Tomografie mit CT ». La TEP montre la distribution d'un traceur radioactif ; la TDM fournit des images anatomiques en coupes."
     }
   },
   "q-k048": {
@@ -450,7 +451,7 @@ export const QUIZ_TRANSLATIONS = {
         "The electrical activity of a skeletal muscle",
         "The electrical activity of a peripheral nerve"
       ],
-      "explanation": "The electrocardiogram records electrical cardiac activity, not directly the pumping capacity."
+      "explanation": "\"EKG\" is short for the German \"Elektrokardiogramm\". The electrocardiogram records electrical cardiac activity, not directly the pumping capacity."
     },
     "fr": {
       "question": "Quelle activité est enregistrée avec un ECG ?",
@@ -460,7 +461,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'activité électrique d'un muscle squelettique",
         "L'activité électrique d'un nerf périphérique"
       ],
-      "explanation": "L'électrocardiogramme enregistre l'activité électrique cardiaque, et non directement la capacité de pompage."
+      "explanation": "« EKG » est l'abréviation de l'allemand « Elektrokardiogramm ». L'électrocardiogramme enregistre l'activité électrique cardiaque, et non directement la capacité de pompage."
     }
   },
   "q-k049": {
@@ -472,7 +473,7 @@ export const QUIZ_TRANSLATIONS = {
         "The electrical activity of the leg muscles",
         "The electrical activity of the facial muscles"
       ],
-      "explanation": "Electroencephalography records electrical brain activity; cardiac activity belongs to the ECG."
+      "explanation": "\"EEG\" is short for the German \"Elektroenzephalografie\". Electroencephalography records electrical brain activity; cardiac activity belongs to the ECG."
     },
     "fr": {
       "question": "Quelle activité est enregistrée lors d'un EEG ?",
@@ -482,7 +483,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'activité électrique des muscles des jambes",
         "L'activité électrique des muscles du visage"
       ],
-      "explanation": "L'électroencéphalographie enregistre l'activité électrique cérébrale ; l'activité cardiaque relève de l'ECG."
+      "explanation": "« EEG » est l'abréviation de l'allemand « Elektroenzephalografie ». L'électroencéphalographie enregistre l'activité électrique cérébrale ; l'activité cardiaque relève de l'ECG."
     }
   },
   "q-k050": {
@@ -494,7 +495,7 @@ export const QUIZ_TRANSLATIONS = {
         "Depicting internal structures with an external transducer",
         "Measuring electrical signals with attached electrodes"
       ],
-      "explanation": "Endoscopy allows viewing with an endoscope; the access route depends on the organ examined."
+      "explanation": "\"Endo\" is short for the German \"Endoskopie\". Endoscopy allows viewing with an endoscope; the access route depends on the organ examined."
     },
     "fr": {
       "question": "Que signifie Endo dans le sens d'une endoscopie ?",
@@ -504,7 +505,7 @@ export const QUIZ_TRANSLATIONS = {
         "La représentation de structures internes à l'aide d'une sonde externe",
         "La mesure de signaux électriques à l'aide d'électrodes collées"
       ],
-      "explanation": "L'endoscopie permet une observation à l'aide d'un endoscope ; la voie d'accès dépend de l'organe examiné."
+      "explanation": "« Endo » est l'abréviation de l'allemand « Endoskopie ». L'endoscopie permet une observation à l'aide d'un endoscope ; la voie d'accès dépend de l'organe examiné."
     }
   },
   "q-k051": {
@@ -516,7 +517,7 @@ export const QUIZ_TRANSLATIONS = {
         "Stomach, colon, and rectum",
         "Pharynx, larynx, and trachea"
       ],
-      "explanation": "EGD covers the esophagus, stomach, and duodenum. It is not an examination of the airways."
+      "explanation": "\"ÖGD/Gastro\" is short for the German \"Ösophagogastroduodenoskopie (Ösophagoskopie / Gastroskopie)\". EGD covers the esophagus, stomach, and duodenum. It is not an examination of the airways."
     },
     "fr": {
       "question": "Quels organes sont typiquement examinés lors d'une endoscopie œso-gastro-duodénale ?",
@@ -526,7 +527,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'estomac, le côlon et le rectum",
         "Le pharynx, le larynx et la trachée"
       ],
-      "explanation": "L'endoscopie œso-gastro-duodénale couvre l'œsophage, l'estomac et le duodénum. Ce n'est pas un examen des voies respiratoires."
+      "explanation": "« ÖGD/Gastro » est l'abréviation de l'allemand « Ösophagogastroduodenoskopie (Ösophagoskopie / Gastroskopie) ». L'endoscopie œso-gastro-duodénale couvre l'œsophage, l'estomac et le duodénum. Ce n'est pas un examen des voies respiratoires."
     }
   },
   "q-k052": {
@@ -538,7 +539,7 @@ export const QUIZ_TRANSLATIONS = {
         "The urinary bladder",
         "The bronchi"
       ],
-      "explanation": "Kolo here stands for colonoscopy. Its main goal is the examination of the colon."
+      "explanation": "\"Kolo\" is short for the German \"Koloskopie\". Kolo here stands for colonoscopy. Its main goal is the examination of the colon."
     },
     "fr": {
       "question": "Quelle portion est principalement examinée par endoscopie lors d'une coloscopie ?",
@@ -548,7 +549,7 @@ export const QUIZ_TRANSLATIONS = {
         "La vessie",
         "Les bronches"
       ],
-      "explanation": "Kolo signifie ici coloscopie. L'objectif est avant tout l'examen du côlon."
+      "explanation": "« Kolo » est l'abréviation de l'allemand « Koloskopie ». Kolo signifie ici coloscopie. L'objectif est avant tout l'examen du côlon."
     }
   },
   "q-k053": {
@@ -560,7 +561,7 @@ export const QUIZ_TRANSLATIONS = {
         "Kidney function based on excreted protein amounts",
         "Liver function based on produced coagulation factors"
       ],
-      "explanation": "Lufu stands for pulmonary function test; depending on the method, this includes measurements of volumes and airflow."
+      "explanation": "\"Lufu\" is short for the German \"Lungenfunktionsuntersuchung\". Lufu stands for pulmonary function test; depending on the method, this includes measurements of volumes and airflow."
     },
     "fr": {
       "question": "Quelle fonction est évaluée par une exploration fonctionnelle respiratoire (EFR) ?",
@@ -570,7 +571,7 @@ export const QUIZ_TRANSLATIONS = {
         "La fonction rénale au moyen de quantités de protéines excrétées",
         "La fonction hépatique au moyen de facteurs de coagulation produits"
       ],
-      "explanation": "Lufu signifie exploration fonctionnelle respiratoire ; selon la méthode, elle comprend des mesures de volumes et de débits d'air."
+      "explanation": "« Lufu » est l'abréviation de l'allemand « Lungenfunktionsuntersuchung ». Lufu signifie exploration fonctionnelle respiratoire ; selon la méthode, elle comprend des mesures de volumes et de débits d'air."
     }
   },
   "q-k054": {
@@ -582,7 +583,7 @@ export const QUIZ_TRANSLATIONS = {
         "In the stomach, via an access through the nose",
         "In the esophagus, via an access through the neck"
       ],
-      "explanation": "PEG creates an access through the abdominal wall to the stomach; a jejunal access must be distinguished from this."
+      "explanation": "\"PEG\" is short for the German \"Perkutane endoskopische Gastrostomie (Ernährungssonde durch die Bauchdecke in den Magen)\". PEG creates an access through the abdominal wall to the stomach; a jejunal access must be distinguished from this."
     },
     "fr": {
       "question": "Où se termine une sonde de gastrostomie (PEG) en position correcte ?",
@@ -592,7 +593,7 @@ export const QUIZ_TRANSLATIONS = {
         "Dans l'estomac, via un accès à travers le nez",
         "Dans l'œsophage, via un accès à travers le cou"
       ],
-      "explanation": "La gastrostomie endoscopique percutanée crée un accès à travers la paroi abdominale jusqu'à l'estomac ; un accès jéjunal doit en être distingué."
+      "explanation": "« PEG » est l'abréviation de l'allemand « Perkutane endoskopische Gastrostomie (Ernährungssonde durch die Bauchdecke in den Magen) ». La gastrostomie endoscopique percutanée crée un accès à travers la paroi abdominale jusqu'à l'estomac ; un accès jéjunal doit en être distingué."
     }
   },
   "q-k055": {
@@ -604,7 +605,7 @@ export const QUIZ_TRANSLATIONS = {
         "The esophagus instead of the stomach",
         "The urinary bladder instead of the stomach"
       ],
-      "explanation": "PEJ leads into the jejunum, a section of the small intestine; PEG refers to the gastric access."
+      "explanation": "\"PEJ\" is short for the German \"Perkutane endoskopische Jejunostomie, Dünndarmsonde über Bauchdecke\". PEJ leads into the jejunum, a section of the small intestine; PEG refers to the gastric access."
     },
     "fr": {
       "question": "Quelle portion cible distingue une jéjunostomie (PEJ) d'une gastrostomie (PEG) ?",
@@ -614,7 +615,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'œsophage au lieu de l'estomac",
         "La vessie au lieu de l'estomac"
       ],
-      "explanation": "La PEJ mène jusqu'au jéjunum, une portion de l'intestin grêle ; la PEG désigne l'accès gastrique."
+      "explanation": "« PEJ » est l'abréviation de l'allemand « Perkutane endoskopische Jejunostomie, Dünndarmsonde über Bauchdecke ». La PEJ mène jusqu'au jéjunum, une portion de l'intestin grêle ; la PEG désigne l'accès gastrique."
     }
   },
   "q-k031": {
@@ -626,7 +627,7 @@ export const QUIZ_TRANSLATIONS = {
         "Under the skin",
         "Into the mouth"
       ],
-      "explanation": "Intravenous refers to administration into a vein, not into the surrounding tissue."
+      "explanation": "\"i.v.\" is short for the German \"Intravenös\". Intravenous refers to administration into a vein, not into the surrounding tissue."
     },
     "fr": {
       "question": "Où un médicament est-il administré lors d'une administration IV ?",
@@ -636,7 +637,7 @@ export const QUIZ_TRANSLATIONS = {
         "Sous la peau",
         "Dans la bouche"
       ],
-      "explanation": "Intraveineux désigne une administration dans une veine, et non dans le tissu environnant."
+      "explanation": "« i.v. » est l'abréviation de l'allemand « Intravenös ». Intraveineux désigne une administration dans une veine, et non dans le tissu environnant."
     }
   },
   "q-k032": {
@@ -648,7 +649,7 @@ export const QUIZ_TRANSLATIONS = {
         "Into the venous vessel",
         "Into the joint space"
       ],
-      "explanation": "Subcutaneous means under the skin, usually into the subcutaneous fatty tissue."
+      "explanation": "\"s.c.\" is short for the German \"Subcutan\". Subcutaneous means under the skin, usually into the subcutaneous fatty tissue."
     },
     "fr": {
       "question": "Où est réalisée une injection SC ?",
@@ -658,7 +659,7 @@ export const QUIZ_TRANSLATIONS = {
         "Dans le vaisseau veineux",
         "Dans l'espace articulaire"
       ],
-      "explanation": "Sous-cutané signifie sous la peau, généralement dans le tissu adipeux sous-cutané."
+      "explanation": "« s.c. » est l'abréviation de l'allemand « Subcutan ». Sous-cutané signifie sous la peau, généralement dans le tissu adipeux sous-cutané."
     }
   },
   "q-k033": {
@@ -670,7 +671,7 @@ export const QUIZ_TRANSLATIONS = {
         "Into the skin layer",
         "Under the tongue"
       ],
-      "explanation": "Intramuscular refers to injection into muscle tissue."
+      "explanation": "\"i.m.\" is short for the German \"Intramuskulär\". Intramuscular refers to injection into muscle tissue."
     },
     "fr": {
       "question": "Où est réalisée une injection IM ?",
@@ -680,7 +681,7 @@ export const QUIZ_TRANSLATIONS = {
         "Dans la couche cutanée",
         "Sous la langue"
       ],
-      "explanation": "Intramusculaire désigne l'injection dans le tissu musculaire."
+      "explanation": "« i.m. » est l'abréviation de l'allemand « Intramuskulär ». Intramusculaire désigne l'injection dans le tissu musculaire."
     }
   },
   "q-k034": {
@@ -692,7 +693,7 @@ export const QUIZ_TRANSLATIONS = {
         "Via the vein",
         "Via the skin"
       ],
-      "explanation": "Per os means by mouth. The abbreviation describes the route, not the dosage form."
+      "explanation": "\"p.o.\" is short for the German \"Per os\". Per os means by mouth. The abbreviation describes the route, not the dosage form."
     },
     "fr": {
       "question": "Quelle voie d'administration désigne p.o. ?",
@@ -702,7 +703,7 @@ export const QUIZ_TRANSLATIONS = {
         "Par la veine",
         "Par la peau"
       ],
-      "explanation": "Per os signifie par la bouche. L'abréviation décrit la voie, et non la forme galénique."
+      "explanation": "« p.o. » est l'abréviation de l'allemand « Per os ». Per os signifie par la bouche. L'abréviation décrit la voie, et non la forme galénique."
     }
   },
   "q-k036": {
@@ -714,7 +715,7 @@ export const QUIZ_TRANSLATIONS = {
         "Semi-solid medications applied externally",
         "Gaseous medications delivered via the airways"
       ],
-      "explanation": "Tbl. stands for tablets. This does not indicate whether a tablet may be split."
+      "explanation": "\"Tbl.\" is short for the German \"Tabletten\". Tbl. stands for tablets. This does not indicate whether a tablet may be split."
     },
     "fr": {
       "question": "Quelle forme galénique désigne Tbl. dans un plan de médication ?",
@@ -724,7 +725,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des médicaments semi-solides appliqués sur la peau",
         "Des médicaments gazeux administrés par les voies respiratoires"
       ],
-      "explanation": "Tbl. signifie comprimés. Cela n'indique pas si un comprimé peut être divisé."
+      "explanation": "« Tbl. » est l'abréviation de l'allemand « Tabletten ». Tbl. signifie comprimés. Cela n'indique pas si un comprimé peut être divisé."
     }
   },
   "q-k037": {
@@ -736,7 +737,7 @@ export const QUIZ_TRANSLATIONS = {
         "By drainage from a kidney fistula",
         "By collection from an indwelling catheter"
       ],
-      "explanation": "Spontaneous urine is voided spontaneously. Midstream urine is a specific type of sample collection and is not automatically the same as every spontaneous urine sample."
+      "explanation": "\"SU/SPU\" is short for the German \"Spontanurin\". Spontaneous urine is voided spontaneously. Midstream urine is a specific type of sample collection and is not automatically the same as every spontaneous urine sample."
     },
     "fr": {
       "question": "Comment un échantillon d'urine désigné SU/SPU est-il fondamentalement obtenu ?",
@@ -746,7 +747,7 @@ export const QUIZ_TRANSLATIONS = {
         "Par drainage à partir d'une fistule rénale",
         "Par prélèvement sur une sonde à demeure"
       ],
-      "explanation": "L'urine spontanée est émise spontanément. L'urine du milieu du jet est un mode de prélèvement particulier et ne correspond pas automatiquement à toute urine spontanée."
+      "explanation": "« SU/SPU » est l'abréviation de l'allemand « Spontanurin ». L'urine spontanée est émise spontanément. L'urine du milieu du jet est un mode de prélèvement particulier et ne correspond pas automatiquement à toute urine spontanée."
     }
   },
   "q-k038": {
@@ -758,7 +759,7 @@ export const QUIZ_TRANSLATIONS = {
         "A catheter serves only for venous infusion",
         "A catheter serves only for draining wound secretion"
       ],
-      "explanation": "DK here means an indwelling catheter for urine drainage; the abbreviation alone does not indicate the access route."
+      "explanation": "\"DK\" is short for the German \"Dauerkatheter\". DK here means an indwelling catheter for urine drainage; the abbreviation alone does not indicate the access route."
     },
     "fr": {
       "question": "Qu'est-ce qui caractérise une sonde à demeure dans le contexte d'un service d'urologie ?",
@@ -768,7 +769,7 @@ export const QUIZ_TRANSLATIONS = {
         "Une sonde sert uniquement à la perfusion veineuse",
         "Une sonde sert uniquement au drainage des sécrétions d'une plaie"
       ],
-      "explanation": "Ici, DK désigne une sonde urinaire à demeure destinée au drainage de l'urine ; l'abréviation seule ne précise pas la voie d'accès."
+      "explanation": "« DK » est l'abréviation de l'allemand « Dauerkatheter ». Ici, DK désigne une sonde urinaire à demeure destinée au drainage de l'urine ; l'abréviation seule ne précise pas la voie d'accès."
     }
   },
   "q-k039": {
@@ -780,7 +781,7 @@ export const QUIZ_TRANSLATIONS = {
         "In a peripheral arterial vessel",
         "In the subcutaneous tissue next to a vessel"
       ],
-      "explanation": "A central venous catheter ends in a central vein. It is neither an arterial catheter nor a subcutaneous access."
+      "explanation": "\"ZVK\" is short for the German \"Zentraler Venenkatheter\". A central venous catheter ends in a central vein. It is neither an arterial catheter nor a subcutaneous access."
     },
     "fr": {
       "question": "Où se situe fondamentalement l'extrémité d'un cathéter veineux central (CVC) correctement positionné ?",
@@ -790,7 +791,7 @@ export const QUIZ_TRANSLATIONS = {
         "Dans un vaisseau artériel périphérique",
         "Dans le tissu sous-cutané à côté d'un vaisseau"
       ],
-      "explanation": "Un cathéter veineux central se termine dans une veine centrale. Ce n'est ni un cathéter artériel ni un accès sous-cutané."
+      "explanation": "« ZVK » est l'abréviation de l'allemand « Zentraler Venenkatheter ». Un cathéter veineux central se termine dans une veine centrale. Ce n'est ni un cathéter artériel ni un accès sous-cutané."
     }
   },
   "q-k044": {
@@ -802,7 +803,7 @@ export const QUIZ_TRANSLATIONS = {
         "Platelets",
         "Coagulation factors without blood cells"
       ],
-      "explanation": "A red cell concentrate mainly contains red blood cells; it is not a platelet or plasma preparation."
+      "explanation": "\"EK\" is short for the German \"Erythrozytenkonzentrat\". A red cell concentrate mainly contains red blood cells; it is not a platelet or plasma preparation."
     },
     "fr": {
       "question": "Quel composant sanguin est principalement contenu dans un culot globulaire ?",
@@ -812,7 +813,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des plaquettes",
         "Des facteurs de coagulation sans cellules sanguines"
       ],
-      "explanation": "Un concentré érythrocytaire contient principalement des globules rouges ; ce n'est ni une préparation plaquettaire ni une préparation plasmatique."
+      "explanation": "« EK » est l'abréviation de l'allemand « Erythrozytenkonzentrat ». Un concentré érythrocytaire contient principalement des globules rouges ; ce n'est ni une préparation plaquettaire ni une préparation plasmatique."
     }
   },
   "q-f006": {
@@ -2562,7 +2563,7 @@ export const QUIZ_TRANSLATIONS = {
         "Endoscopic surgery exclusively on the esophagus",
         "Endoscopic surgery exclusively on the middle ear"
       ],
-      "explanation": "FESS stands for functional endoscopic sinus surgery; the exact extent depends on the findings."
+      "explanation": "\"FESS\" is short for the German \"Nasennebenhöhlen-OP (Functional Endoscopic Sinus Surgery)\". FESS stands for functional endoscopic sinus surgery; the exact extent depends on the findings."
     },
     "fr": {
       "question": "Quelle intervention désigne le sigle FESS ?",
@@ -2572,7 +2573,7 @@ export const QUIZ_TRANSLATIONS = {
         "Une chirurgie endoscopique exclusivement de l'œsophage",
         "Une chirurgie endoscopique exclusivement de l'oreille moyenne"
       ],
-      "explanation": "FESS désigne la chirurgie endoscopique fonctionnelle des sinus ; son étendue exacte dépend des constatations."
+      "explanation": "« FESS » est l'abréviation de l'allemand « Nasennebenhöhlen-OP (Functional Endoscopic Sinus Surgery) ». FESS désigne la chirurgie endoscopique fonctionnelle des sinus ; son étendue exacte dépend des constatations."
     }
   },
   "q-k009": {
@@ -2584,7 +2585,7 @@ export const QUIZ_TRANSLATIONS = {
         "Drainage of middle ear secretion through a tube in the eardrum",
         "Pressure equalization through a permanently opened nasal passage"
       ],
-      "explanation": "The VSB is an active middle ear implant; it is neither a cochlear implant nor a ventilation tube."
+      "explanation": "\"VSB\" is short for the German \"Vibrant Soundbridge (Hörgerätimplantat)\". The VSB is an active middle ear implant; it is neither a cochlear implant nor a ventilation tube."
     },
     "fr": {
       "question": "Quel principe utilise un Vibrant Soundbridge (VSB) ?",
@@ -2594,7 +2595,7 @@ export const QUIZ_TRANSLATIONS = {
         "Le drainage des sécrétions de l'oreille moyenne par un tube dans le tympan",
         "L'équilibrage de la pression par un passage nasal en permanence ouvert"
       ],
-      "explanation": "Le VSB est un implant actif de l'oreille moyenne ; ce n'est ni un implant cochléaire ni un aérateur transtympanique."
+      "explanation": "« VSB » est l'abréviation de l'allemand « Vibrant Soundbridge (Hörgerätimplantat) ». Le VSB est un implant actif de l'oreille moyenne ; ce n'est ni un implant cochléaire ni un aérateur transtympanique."
     }
   },
   "q-k010": {
@@ -2606,7 +2607,7 @@ export const QUIZ_TRANSLATIONS = {
         "Removal of the pharyngeal tonsil (adenoid) in the nasopharynx",
         "Reduction of the lingual tonsil at the base of the tongue"
       ],
-      "explanation": "Here, TE stands for tonsillectomy. Partial removal of the palatine tonsils is called tonsillotomy."
+      "explanation": "\"TE\" is short for the German \"Tonsillektomie\". Here, TE stands for tonsillectomy. Partial removal of the palatine tonsils is called tonsillotomy."
     },
     "fr": {
       "question": "Quelle intervention désigne le sigle TE dans ce glossaire de service ?",
@@ -2616,7 +2617,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'ablation de l'amygdale pharyngée (végétations) dans le nasopharynx",
         "La réduction de l'amygdale linguale à la base de la langue"
       ],
-      "explanation": "Ici, TE signifie amygdalectomie. L'ablation partielle des amygdales palatines s'appelle amygdalotomie."
+      "explanation": "« TE » est l'abréviation de l'allemand « Tonsillektomie ». Ici, TE signifie amygdalectomie. L'ablation partielle des amygdales palatines s'appelle amygdalotomie."
     }
   },
   "q-k011": {
@@ -2628,7 +2629,7 @@ export const QUIZ_TRANSLATIONS = {
         "Removal of a nasal turbinate",
         "Removal of a vocal fold"
       ],
-      "explanation": "Here, AT stands for adenotomy; the pharyngeal tonsil is located in the nasopharynx."
+      "explanation": "\"AT\" is short for the German \"Adenotomie\". Here, AT stands for adenotomy; the pharyngeal tonsil is located in the nasopharynx."
     },
     "fr": {
       "question": "Quelle intervention désigne le sigle AT dans ce glossaire de service ?",
@@ -2638,7 +2639,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'ablation d'un cornet nasal",
         "L'ablation d'une corde vocale"
       ],
-      "explanation": "Ici, AT signifie adénotomie ; l'amygdale pharyngée se situe dans le nasopharynx."
+      "explanation": "« AT » est l'abréviation de l'allemand « Adenotomie ». Ici, AT signifie adénotomie ; l'amygdale pharyngée se situe dans le nasopharynx."
     }
   },
   "q-k012": {
@@ -2650,7 +2651,7 @@ export const QUIZ_TRANSLATIONS = {
         "Widening the outer cartilaginous ear canal",
         "Closing an existing eardrum defect"
       ],
-      "explanation": "PHR here refers to a tympanostomy tube (grommet). It keeps an opening for middle ear ventilation."
+      "explanation": "\"PHR\" is short for the German \"Paukenhöhlenröhrchen\". PHR here refers to a tympanostomy tube (grommet). It keeps an opening for middle ear ventilation."
     },
     "fr": {
       "question": "Quelle est la fonction principale d'un PHR (aérateur transtympanique) ?",
@@ -2660,7 +2661,7 @@ export const QUIZ_TRANSLATIONS = {
         "Élargir le conduit auditif externe cartilagineux",
         "Fermer une perforation tympanique existante"
       ],
-      "explanation": "PHR désigne ici un aérateur transtympanique. Il maintient une ouverture pour ventiler l'oreille moyenne."
+      "explanation": "« PHR » est l'abréviation de l'allemand « Paukenhöhlenröhrchen ». PHR désigne ici un aérateur transtympanique. Il maintient une ouverture pour ventiler l'oreille moyenne."
     }
   },
   "q-k013": {
@@ -2672,7 +2673,7 @@ export const QUIZ_TRANSLATIONS = {
         "Disabling only the vestibular nerve",
         "Recording only the electrical responses of the auditory system"
       ],
-      "explanation": "The types describe different reconstructions. Tympanoplasty is a surgical procedure, not tympanometry, which is a measurement."
+      "explanation": "\"Tymp. Typ I-IV\" is short for the German \"Tympanoplastik (Ohrsanierung), Wiederherstellung des Trommelfells und/oder der knöchernen Hörkette\". The types describe different reconstructions. Tympanoplasty is a surgical procedure, not tympanometry, which is a measurement."
     },
     "fr": {
       "question": "Quel est l'objectif d'une tympanoplastie ?",
@@ -2682,7 +2683,7 @@ export const QUIZ_TRANSLATIONS = {
         "Sectionner uniquement le nerf vestibulaire",
         "Enregistrer uniquement les réponses électriques du système auditif"
       ],
-      "explanation": "Les types décrivent différentes reconstructions. La tympanoplastie est une intervention chirurgicale, et non la tympanométrie, qui est une mesure."
+      "explanation": "« Tymp. Typ I-IV » est l'abréviation de l'allemand « Tympanoplastik (Ohrsanierung), Wiederherstellung des Trommelfells und/oder der knöchernen Hörkette ». Les types décrivent différentes reconstructions. La tympanoplastie est une intervention chirurgicale, et non la tympanométrie, qui est une mesure."
     }
   },
   "q-k014": {
@@ -2694,7 +2695,7 @@ export const QUIZ_TRANSLATIONS = {
         "The parotid gland",
         "The pharyngeal tonsil"
       ],
-      "explanation": "In this ward glossary, LE stands for laryngectomy; outside this context the abbreviation may be used differently."
+      "explanation": "\"LE\" is short for the German \"Laryngektomie\". In this ward glossary, LE stands for laryngectomy; outside this context the abbreviation may be used differently."
     },
     "fr": {
       "question": "Quel organe est concerné par l'opération désignée ici par LE ?",
@@ -2704,7 +2705,7 @@ export const QUIZ_TRANSLATIONS = {
         "La glande parotide",
         "L'amygdale pharyngée (végétations)"
       ],
-      "explanation": "Dans ce glossaire de service, LE signifie laryngectomie ; hors de ce contexte, l'abréviation peut avoir un autre sens."
+      "explanation": "« LE » est l'abréviation de l'allemand « Laryngektomie ». Dans ce glossaire de service, LE signifie laryngectomie ; hors de ce contexte, l'abréviation peut avoir un autre sens."
     }
   },
   "q-k015": {
@@ -2716,7 +2717,7 @@ export const QUIZ_TRANSLATIONS = {
         "Only vocal fold tissue in the larynx",
         "Only salivary gland tissue in front of the ear"
       ],
-      "explanation": "Neck dissection refers to the removal of cervical lymph nodes. Its extent is not always radical and must be specified precisely."
+      "explanation": "\"Neck diss\" is short for the German \"Neck-Dissection, radikale Lymphknotenentfernung am Hals\". Neck dissection refers to the removal of cervical lymph nodes. Its extent is not always radical and must be specified precisely."
     },
     "fr": {
       "question": "Quel tissu est spécifiquement retiré lors d'un évidement ganglionnaire cervical (neck dissection) ?",
@@ -2726,7 +2727,7 @@ export const QUIZ_TRANSLATIONS = {
         "Uniquement le tissu des cordes vocales dans le larynx",
         "Uniquement le tissu des glandes salivaires devant l'oreille"
       ],
-      "explanation": "L'évidement ganglionnaire cervical désigne l'ablation des ganglions lymphatiques du cou. Son étendue n'est pas toujours radicale et doit être précisée."
+      "explanation": "« Neck diss » est l'abréviation de l'allemand « Neck-Dissection, radikale Lymphknotenentfernung am Hals ». L'évidement ganglionnaire cervical désigne l'ablation des ganglions lymphatiques du cou. Son étendue n'est pas toujours radicale et doit être précisée."
     }
   },
   "q-k016": {
@@ -2738,7 +2739,7 @@ export const QUIZ_TRANSLATIONS = {
         "The pharyngeal tonsil",
         "The palatine tonsil"
       ],
-      "explanation": "'Concho' here stands for turbinectomy (conchotomy). Septoplasty, by contrast, concerns the nasal septum."
+      "explanation": "\"Concho\" is short for the German \"Conchotomie (OP an den Nasenmuscheln)\". 'Concho' here stands for turbinectomy (conchotomy). Septoplasty, by contrast, concerns the nasal septum."
     },
     "fr": {
       "question": "Quelle structure est réduite chirurgicalement ou partiellement retirée lors d'une intervention 'Concho' ?",
@@ -2748,7 +2749,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'amygdale pharyngée",
         "L'amygdale palatine"
       ],
-      "explanation": "'Concho' désigne ici une turbinectomie (conchotomie). La septoplastie, elle, concerne la cloison nasale."
+      "explanation": "« Concho » est l'abréviation de l'allemand « Conchotomie (OP an den Nasenmuscheln) ». 'Concho' désigne ici une turbinectomie (conchotomie). La septoplastie, elle, concerne la cloison nasale."
     }
   },
   "q-k017": {
@@ -2760,7 +2761,7 @@ export const QUIZ_TRANSLATIONS = {
         "The ultrasound examination of a lymph node",
         "Radiotherapy of a lymph node alone"
       ],
-      "explanation": "Lymph node excision means surgical removal, not merely puncture or imaging."
+      "explanation": "\"LK EX\" is short for the German \"Lymphknotenexstirpation\". Lymph node excision means surgical removal, not merely puncture or imaging."
     },
     "fr": {
       "question": "Que signifie LK EX ?",
@@ -2770,7 +2771,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'examen échographique d'un ganglion lymphatique",
         "La seule irradiation d'un ganglion lymphatique"
       ],
-      "explanation": "L'exérèse ganglionnaire désigne une ablation chirurgicale, et non une simple ponction ou un examen d'imagerie."
+      "explanation": "« LK EX » est l'abréviation de l'allemand « Lymphknotenexstirpation ». L'exérèse ganglionnaire désigne une ablation chirurgicale, et non une simple ponction ou un examen d'imagerie."
     }
   },
   "q-k018": {
@@ -2782,7 +2783,7 @@ export const QUIZ_TRANSLATIONS = {
         "Purely mechanical pressure equalization in the middle ear",
         "Purely thermal stimulation of the balance organ"
       ],
-      "explanation": "A cochlear implant converts sound into electrical impulses. It is not simply a louder loudspeaker in the ear canal."
+      "explanation": "\"CI\" is short for the German \"Cochlear-Implantat (Hörgerätimplantat)\". A cochlear implant converts sound into electrical impulses. It is not simply a louder loudspeaker in the ear canal."
     },
     "fr": {
       "question": "Quel principe utilise un IC (implant cochléaire) ?",
@@ -2792,7 +2793,7 @@ export const QUIZ_TRANSLATIONS = {
         "Uniquement l'équilibrage mécanique de la pression dans l'oreille moyenne",
         "Uniquement la stimulation thermique de l'organe de l'équilibre"
       ],
-      "explanation": "Un implant cochléaire convertit le son en impulsions électriques. Ce n'est pas simplement un haut-parleur plus puissant dans le conduit auditif."
+      "explanation": "« CI » est l'abréviation de l'allemand « Cochlear-Implantat (Hörgerätimplantat) ». Un implant cochléaire convertit le son en impulsions électriques. Ce n'est pas simplement un haut-parleur plus puissant dans le conduit auditif."
     }
   },
   "q-k019": {
@@ -2804,7 +2805,7 @@ export const QUIZ_TRANSLATIONS = {
         "Electrical stimulation via an electrode in the cochlea",
         "Pressure transmission through air into the esophagus"
       ],
-      "explanation": "BAHA stands for a bone-anchored hearing aid; it uses bone conduction."
+      "explanation": "\"BAHA\" is short for the German \"Knochenverankertes Hörgerät\". BAHA stands for a bone-anchored hearing aid; it uses bone conduction."
     },
     "fr": {
       "question": "Quelle voie de transmission utilise un BAHA ?",
@@ -2814,7 +2815,7 @@ export const QUIZ_TRANSLATIONS = {
         "La stimulation électrique par une électrode dans la cochlée",
         "La transmission de pression par l'air jusqu'à l'œsophage"
       ],
-      "explanation": "BAHA désigne un appareil auditif ancré sur l'os ; il utilise la conduction osseuse."
+      "explanation": "« BAHA » est l'abréviation de l'allemand « Knochenverankertes Hörgerät ». BAHA désigne un appareil auditif ancré sur l'os ; il utilise la conduction osseuse."
     }
   },
   "q-k020": {
@@ -2826,7 +2827,7 @@ export const QUIZ_TRANSLATIONS = {
         "The pharyngeal tonsil",
         "The anterior wall of the frontal sinus"
       ],
-      "explanation": "SPL here stands for septoplasty. The procedure targets the nasal septum."
+      "explanation": "\"SPL\" is short for the German \"Septumplastik\". SPL here stands for septoplasty. The procedure targets the nasal septum."
     },
     "fr": {
       "question": "Quelle structure est corrigée lors d'une SPL (septoplastie) ?",
@@ -2836,7 +2837,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'amygdale pharyngée",
         "La paroi antérieure du sinus frontal"
       ],
-      "explanation": "SPL signifie ici septoplastie. L'intervention porte sur le septum nasal."
+      "explanation": "« SPL » est l'abréviation de l'allemand « Septumplastik ». SPL signifie ici septoplastie. L'intervention porte sur le septum nasal."
     }
   },
   "q-k021": {
@@ -2848,7 +2849,7 @@ export const QUIZ_TRANSLATIONS = {
         "The nasopharynx with its tubal openings",
         "The stomach with its pylorus"
       ],
-      "explanation": "The abbreviations used here refer to microlaryngoscopy. Local spelling conventions should be checked against the ward standard."
+      "explanation": "\"MLK/MLS\" is short for the German \"Mikrolaryngoskopie\". The abbreviations used here refer to microlaryngoscopy. Local spelling conventions should be checked against the ward standard."
     },
     "fr": {
       "question": "Quelle zone est examinée ou traitée sous grossissement lors d'une MLK/MLS (microlaryngoscopie) ?",
@@ -2858,7 +2859,7 @@ export const QUIZ_TRANSLATIONS = {
         "Le nasopharynx avec ses orifices tubaires",
         "L'estomac avec son pylore"
       ],
-      "explanation": "Les abréviations utilisées ici désignent la microlaryngoscopie. Les usages locaux doivent être vérifiés selon le standard du service."
+      "explanation": "« MLK/MLS » est l'abréviation de l'allemand « Mikrolaryngoskopie ». Les abréviations utilisées ici désignent la microlaryngoscopie. Les usages locaux doivent être vérifiés selon le standard du service."
     }
   },
   "q-k040": {
@@ -2870,7 +2871,7 @@ export const QUIZ_TRANSLATIONS = {
         "Nursing care provided only in the intensive care unit",
         "Nursing care provided only in the recovery room"
       ],
-      "explanation": "HKP here stands for home nursing care; the specific service depends on the order."
+      "explanation": "\"HKP\" is short for the German \"Hauskrankenpflege / Sozialstation\". HKP here stands for home nursing care; the specific service depends on the order."
     },
     "fr": {
       "question": "Quel type de prise en charge désigne HKP dans ce glossaire ?",
@@ -2880,7 +2881,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des soins infirmiers dispensés uniquement en soins intensifs",
         "Des soins infirmiers dispensés uniquement en salle de réveil"
       ],
-      "explanation": "HKP désigne ici les soins infirmiers à domicile ; la prestation concrète dépend de la prescription."
+      "explanation": "« HKP » est l'abréviation de l'allemand « Hauskrankenpflege / Sozialstation ». HKP désigne ici les soins infirmiers à domicile ; la prestation concrète dépend de la prescription."
     }
   },
   "q-k041": {
@@ -2892,7 +2893,7 @@ export const QUIZ_TRANSLATIONS = {
         "Only the outpatient family doctor",
         "Only the operating specialist physician"
       ],
-      "explanation": "'Physician on duty' describes a duty function, not automatically a particular hierarchy level."
+      "explanation": "\"AvD\" is short for the German \"Arzt vom Dienst\". 'Physician on duty' describes a duty function, not automatically a particular hierarchy level."
     },
     "fr": {
       "question": "Quel rôle désigne AvD ?",
@@ -2902,7 +2903,7 @@ export const QUIZ_TRANSLATIONS = {
         "Uniquement le médecin traitant en soins ambulatoires",
         "Uniquement le médecin spécialiste opérant"
       ],
-      "explanation": "'Médecin de garde' décrit une fonction de service, pas automatiquement un niveau hiérarchique particulier."
+      "explanation": "« AvD » est l'abréviation de l'allemand « Arzt vom Dienst ». 'Médecin de garde' décrit une fonction de service, pas automatiquement un niveau hiérarchique particulier."
     }
   },
   "q-k042": {
@@ -2914,7 +2915,7 @@ export const QUIZ_TRANSLATIONS = {
         "A unit for outpatient therapy prescriptions",
         "A unit for internal staff payroll"
       ],
-      "explanation": "RST here stands for emergency department. Local naming conventions may vary."
+      "explanation": "\"RST\" is short for the German \"Rettungsstelle\". RST here stands for emergency department. Local naming conventions may vary."
     },
     "fr": {
       "question": "Quelle structure désigne RST dans ce glossaire de service ?",
@@ -2924,7 +2925,7 @@ export const QUIZ_TRANSLATIONS = {
         "Un service pour les prescriptions ambulatoires de soins",
         "Un service pour la gestion administrative du personnel"
       ],
-      "explanation": "RST désigne ici le service des urgences. Les appellations locales peuvent varier."
+      "explanation": "« RST » est l'abréviation de l'allemand « Rettungsstelle ». RST désigne ici le service des urgences. Les appellations locales peuvent varier."
     }
   },
   "q-k043": {
@@ -2936,7 +2937,7 @@ export const QUIZ_TRANSLATIONS = {
         "Therapy roles such as physiotherapy and occupational therapy",
         "Administrative roles such as admissions and billing management"
       ],
-      "explanation": "CA/OA refers to the chief physician and senior physician, not nursing leadership."
+      "explanation": "\"CA/OA\" is short for the German \"Chefarzt / Oberarzt\". CA/OA refers to the chief physician and senior physician, not nursing leadership."
     },
     "fr": {
       "question": "Quelles fonctions désigne ici la combinaison CA/OA ?",
@@ -2946,7 +2947,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des fonctions thérapeutiques, kinésithérapie et ergothérapie",
         "Des fonctions administratives, admission et facturation"
       ],
-      "explanation": "CA/OA désigne le médecin-chef et le médecin senior, et non la direction des soins infirmiers."
+      "explanation": "« CA/OA » est l'abréviation de l'allemand « Chefarzt / Oberarzt ». CA/OA désigne le médecin-chef et le médecin senior, et non la direction des soins infirmiers."
     }
   },
   "q-k056": {
@@ -2958,7 +2959,7 @@ export const QUIZ_TRANSLATIONS = {
         "The management of the technical service",
         "The management of the pharmacy service"
       ],
-      "explanation": "PDL stands for nursing service management; the exact responsibilities depend on the hospital's organization."
+      "explanation": "\"PDL\" is short for the German \"Pflegedienstleitung\". PDL stands for nursing service management; the exact responsibilities depend on the hospital's organization."
     },
     "fr": {
       "question": "À quel domaine la PDL est-elle rattachée sur le plan organisationnel ?",
@@ -2968,7 +2969,7 @@ export const QUIZ_TRANSLATIONS = {
         "La direction du service technique",
         "La direction du service pharmaceutique"
       ],
-      "explanation": "PDL signifie direction des soins infirmiers ; les compétences exactes dépendent de l'organisation de l'établissement."
+      "explanation": "« PDL » est l'abréviation de l'allemand « Pflegedienstleitung ». PDL signifie direction des soins infirmiers ; les compétences exactes dépendent de l'organisation de l'établissement."
     }
   },
   "q-k022": {
@@ -2980,7 +2981,7 @@ export const QUIZ_TRANSLATIONS = {
         "Anticoagulants",
         "Antiemetics"
       ],
-      "explanation": "Cefuroxime is an antibiotic. Dosage must never be inferred from the ward abbreviation alone."
+      "explanation": "\"Cefu\" is short for the German \"Cefuroxim (Antibiotikum)\". Cefuroxime is an antibiotic. Dosage must never be inferred from the ward abbreviation alone."
     },
     "fr": {
       "question": "À quelle classe de médicaments appartient le céfuroxime, abrégé Cefu ?",
@@ -2990,7 +2991,7 @@ export const QUIZ_TRANSLATIONS = {
         "Les anticoagulants",
         "Les antiémétiques"
       ],
-      "explanation": "Le céfuroxime est un antibiotique. La posologie ne doit jamais être déduite de la seule abréviation de service."
+      "explanation": "« Cefu » est l'abréviation de l'allemand « Cefuroxim (Antibiotikum) ». Le céfuroxime est un antibiotique. La posologie ne doit jamais être déduite de la seule abréviation de service."
     }
   },
   "q-k023": {
@@ -3002,7 +3003,7 @@ export const QUIZ_TRANSLATIONS = {
         "A first medication dose given before exertion",
         "An external medication order"
       ],
-      "explanation": "EaB here stands for self-administered medication at the bedside. The abbreviation does not replace the hospital's internal rules on medication storage or intake."
+      "explanation": "\"EaB\" is short for the German \"Eigenmedikation am Bett\". EaB here stands for self-administered medication at the bedside. The abbreviation does not replace the hospital's internal rules on medication storage or intake."
     },
     "fr": {
       "question": "Que signifie EaB dans ce glossaire de service ?",
@@ -3012,7 +3013,7 @@ export const QUIZ_TRANSLATIONS = {
         "Une première prise médicamenteuse avant un effort",
         "Une commande externe de médicaments"
       ],
-      "explanation": "EaB désigne ici l'automédication au chevet. L'abréviation ne remplace pas le règlement interne de l'établissement sur le stockage ou la prise des médicaments."
+      "explanation": "« EaB » est l'abréviation de l'allemand « Eigenmedikation am Bett ». EaB désigne ici l'automédication au chevet. L'abréviation ne remplace pas le règlement interne de l'établissement sur le stockage ou la prise des médicaments."
     }
   },
   "q-k024": {
@@ -3024,7 +3025,7 @@ export const QUIZ_TRANSLATIONS = {
         "Local anesthesia numbing only the surgical site",
         "Topical anesthesia numbing only one mucous membrane"
       ],
-      "explanation": "ITN means intubation anesthesia; the tube secures the airway during general anesthesia."
+      "explanation": "\"ITN\" is short for the German \"Intubationsnarkose\". ITN means intubation anesthesia; the tube secures the airway during general anesthesia."
     },
     "fr": {
       "question": "Quelle caractéristique correspond à l'ITN (anesthésie générale avec intubation) ?",
@@ -3034,7 +3035,7 @@ export const QUIZ_TRANSLATIONS = {
         "Une anesthésie locale n'anesthésiant que le site opératoire",
         "Une anesthésie de surface n'anesthésiant qu'une muqueuse"
       ],
-      "explanation": "ITN signifie anesthésie avec intubation ; la sonde sécurise les voies aériennes pendant l'anesthésie générale."
+      "explanation": "« ITN » est l'abréviation de l'allemand « Intubationsnarkose ». ITN signifie anesthésie avec intubation ; la sonde sécurise les voies aériennes pendant l'anesthésie générale."
     }
   },
   "q-k025": {
@@ -3046,7 +3047,7 @@ export const QUIZ_TRANSLATIONS = {
         "Only statutory co-payments",
         "Only emergency nursing measures"
       ],
-      "explanation": "Optional services (WL) are agreed on in addition, such as certain accommodation or medical services."
+      "explanation": "\"WL\" is short for the German \"Wahlleistung\". Optional services (WL) are agreed on in addition, such as certain accommodation or medical services."
     },
     "fr": {
       "question": "Que désigne WL lors de l'admission à l'hôpital ?",
@@ -3056,7 +3057,7 @@ export const QUIZ_TRANSLATIONS = {
         "Uniquement les participations financières fixées par la loi",
         "Uniquement les mesures de soins d'urgence"
       ],
-      "explanation": "Les prestations optionnelles (WL) sont convenues en supplément, par exemple certaines prestations d'hébergement ou médicales."
+      "explanation": "« WL » est l'abréviation de l'allemand « Wahlleistung ». Les prestations optionnelles (WL) sont convenues en supplément, par exemple certaines prestations d'hébergement ou médicales."
     }
   },
   "q-k026": {
@@ -3068,7 +3069,7 @@ export const QUIZ_TRANSLATIONS = {
         "Monitoring with one or two monitors",
         "Nursing care by one or two nurses"
       ],
-      "explanation": "EZ/DZ means single or double room and does not indicate the intensity of care."
+      "explanation": "\"EZ/DZ\" is short for the German \"Einzel- / Doppelzimmer\". EZ/DZ means single or double room and does not indicate the intensity of care."
     },
     "fr": {
       "question": "À quoi se rapporte EZ/DZ dans la planification des chambres ?",
@@ -3078,7 +3079,7 @@ export const QUIZ_TRANSLATIONS = {
         "À la surveillance avec un ou deux moniteurs",
         "Aux soins par un ou deux infirmiers"
       ],
-      "explanation": "EZ/DZ signifie chambre individuelle ou chambre double et ne désigne pas l'intensité des soins."
+      "explanation": "« EZ/DZ » est l'abréviation de l'allemand « Einzel- / Doppelzimmer ». EZ/DZ signifie chambre individuelle ou chambre double et ne désigne pas l'intensité des soins."
     }
   },
   "q-k027": {
@@ -3090,7 +3091,7 @@ export const QUIZ_TRANSLATIONS = {
         "The person receives only long-term care insurance benefits",
         "The person receives only a free additional service"
       ],
-      "explanation": "SZ means self-payer. Which costs are affected must be clear from the specific agreement."
+      "explanation": "\"SZ\" is short for the German \"Selbstzahler\". SZ means self-payer. Which costs are affected must be clear from the specific agreement."
     },
     "fr": {
       "question": "Quelle affirmation correspond à SZ dans un contexte de facturation ?",
@@ -3100,7 +3101,7 @@ export const QUIZ_TRANSLATIONS = {
         "La personne bénéficie uniquement des prestations de l'assurance dépendance",
         "La personne bénéficie uniquement d'une prestation supplémentaire gratuite"
       ],
-      "explanation": "SZ signifie payeur privé (autofinancement). Les frais concernés doivent ressortir de l'accord concret."
+      "explanation": "« SZ » est l'abréviation de l'allemand « Selbstzahler ». SZ signifie payeur privé (autofinancement). Les frais concernés doivent ressortir de l'accord concret."
     }
   },
   "q-k028": {
@@ -3112,7 +3113,7 @@ export const QUIZ_TRANSLATIONS = {
         "Through the abdominal wall directly into the stomach",
         "Through the abdominal wall directly into the small intestine"
       ],
-      "explanation": "MS here refers to a nasogastric tube. Its position must be confirmed according to current standards."
+      "explanation": "\"MS\" is short for the German \"Nasale Magensonde\". MS here refers to a nasogastric tube. Its position must be confirmed according to current standards."
     },
     "fr": {
       "question": "Quel trajet emprunte la sonde nasogastrique désignée ici par MS ?",
@@ -3122,7 +3123,7 @@ export const QUIZ_TRANSLATIONS = {
         "Directement par la paroi abdominale jusqu'à l'estomac",
         "Directement par la paroi abdominale jusqu'à l'intestin grêle"
       ],
-      "explanation": "MS désigne ici une sonde nasogastrique. Sa position doit être vérifiée selon les standards en vigueur."
+      "explanation": "« MS » est l'abréviation de l'allemand « Nasale Magensonde ». MS désigne ici une sonde nasogastrique. Sa position doit être vérifiée selon les standards en vigueur."
     }
   },
   "q-k029": {
@@ -3134,7 +3135,7 @@ export const QUIZ_TRANSLATIONS = {
         "A tissue growth is fundamentally a bacterial inflammation",
         "A tissue growth is fundamentally a harmless scar"
       ],
-      "explanation": "'Tumor' is not automatically equivalent to cancer. Whether it is benign or malignant must be determined separately."
+      "explanation": "\"TM\" is short for the German \"Tumor\". 'Tumor' is not automatically equivalent to cancer. Whether it is benign or malignant must be determined separately."
     },
     "fr": {
       "question": "Quelle affirmation est vraie concernant TM au sens de tumeur ?",
@@ -3144,7 +3145,7 @@ export const QUIZ_TRANSLATIONS = {
         "Une formation tissulaire est fondamentalement une inflammation bactérienne",
         "Une formation tissulaire est fondamentalement une cicatrice bénigne"
       ],
-      "explanation": "'Tumeur' n'équivaut pas automatiquement à cancer. Son caractère bénin ou malin doit être déterminé séparément."
+      "explanation": "« TM » est l'abréviation de l'allemand « Tumor ». 'Tumeur' n'équivaut pas automatiquement à cancer. Son caractère bénin ou malin doit être déterminé séparément."
     }
   },
   "q-k030": {
@@ -3156,7 +3157,7 @@ export const QUIZ_TRANSLATIONS = {
         "Lymphatic tissue pads in the throat",
         "Cartilaginous connections between the larynx and trachea"
       ],
-      "explanation": "NNH stands for paranasal sinuses, such as the maxillary, frontal, and sphenoid sinuses as well as the ethmoid cells."
+      "explanation": "\"NNH\" is short for the German \"Nasennebenhöhle\". NNH stands for paranasal sinuses, such as the maxillary, frontal, and sphenoid sinuses as well as the ethmoid cells."
     },
     "fr": {
       "question": "Quelles structures font partie des NNH (sinus paranasaux) ?",
@@ -3166,7 +3167,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des amas de tissu lymphatique dans le pharynx",
         "Des connexions cartilagineuses entre le larynx et la trachée"
       ],
-      "explanation": "NNH signifie sinus paranasaux, comme les sinus maxillaires, frontaux et sphénoïdaux ainsi que les cellules ethmoïdales."
+      "explanation": "« NNH » est l'abréviation de l'allemand « Nasennebenhöhle ». NNH signifie sinus paranasaux, comme les sinus maxillaires, frontaux et sphénoïdaux ainsi que les cellules ethmoïdales."
     }
   },
   "q-k035": {
@@ -3178,7 +3179,7 @@ export const QUIZ_TRANSLATIONS = {
         "The regulation of uric acid",
         "The regulation of bilirubin"
       ],
-      "explanation": "Diabetes mellitus concerns glucose metabolism; the abbreviation alone does not specify the type of diabetes."
+      "explanation": "\"Diab\" is short for the German \"Diabetes\". Diabetes mellitus concerns glucose metabolism; the abbreviation alone does not specify the type of diabetes."
     },
     "fr": {
       "question": "Quel domaine métabolique est au premier plan dans le diabète sucré, désigné ici par Diab ?",
@@ -3188,7 +3189,7 @@ export const QUIZ_TRANSLATIONS = {
         "La régulation de l'acide urique",
         "La régulation de la bilirubine"
       ],
-      "explanation": "Le diabète sucré concerne le métabolisme du glucose ; l'abréviation seule ne précise pas le type de diabète."
+      "explanation": "« Diab » est l'abréviation de l'allemand « Diabetes ». Le diabète sucré concerne le métabolisme du glucose ; l'abréviation seule ne précise pas le type de diabète."
     }
   },
   "q-k057": {
@@ -3200,7 +3201,7 @@ export const QUIZ_TRANSLATIONS = {
         "Fungi",
         "Worms"
       ],
-      "explanation": "Antibiotics are used against bacterial infections; they do not fundamentally work against every group of pathogens."
+      "explanation": "\"AB\" is short for the German \"Antibiotika\". Antibiotics are used against bacterial infections; they do not fundamentally work against every group of pathogens."
     },
     "fr": {
       "question": "Contre quel groupe d'agents pathogènes les AB (antibiotiques) agissent-ils fondamentalement ?",
@@ -3210,7 +3211,7 @@ export const QUIZ_TRANSLATIONS = {
         "Les champignons",
         "Les vers"
       ],
-      "explanation": "Les antibiotiques sont utilisés contre les infections bactériennes ; ils n'agissent pas fondamentalement contre tous les groupes d'agents pathogènes."
+      "explanation": "« AB » est l'abréviation de l'allemand « Antibiotika ». Les antibiotiques sont utilisés contre les infections bactériennes ; ils n'agissent pas fondamentalement contre tous les groupes d'agents pathogènes."
     }
   },
   "q-k058": {
@@ -3222,7 +3223,7 @@ export const QUIZ_TRANSLATIONS = {
         "The tonsillectomy is firmly scheduled for tomorrow",
         "The tonsillectomy has been explicitly ruled out"
       ],
-      "explanation": "Z.n. means 'status post' and refers to a preceding event."
+      "explanation": "\"Z.n.\" is short for the German \"Zustand nach\". Z.n. means 'status post' and refers to a preceding event."
     },
     "fr": {
       "question": "Comment faut-il comprendre 'Z.n. amygdalectomie' dans des antécédents ?",
@@ -3232,7 +3233,7 @@ export const QUIZ_TRANSLATIONS = {
         "L'amygdalectomie est prévue de manière ferme pour demain",
         "L'amygdalectomie a été explicitement exclue"
       ],
-      "explanation": "Z.n. signifie 'état après' (status post) et renvoie à un événement antérieur."
+      "explanation": "« Z.n. » est l'abréviation de l'allemand « Zustand nach ». Z.n. signifie 'état après' (status post) et renvoie à un événement antérieur."
     }
   },
   "q-k059": {
@@ -3244,7 +3245,7 @@ export const QUIZ_TRANSLATIONS = {
         "An abscess was removed in the past and has healed",
         "An abscess is already definitively proven by the abbreviation"
       ],
-      "explanation": "V.a. means 'suspected'. A suspected diagnosis is not a confirmed diagnosis."
+      "explanation": "\"V.a.\" is short for the German \"Verdacht auf\". V.a. means 'suspected'. A suspected diagnosis is not a confirmed diagnosis."
     },
     "fr": {
       "question": "Comment faut-il comprendre 'V.a. abcès péri-amygdalien' ?",
@@ -3254,7 +3255,7 @@ export const QUIZ_TRANSLATIONS = {
         "Un abcès a été retiré par le passé et a guéri",
         "Un abcès est déjà formellement prouvé par cette abréviation"
       ],
-      "explanation": "V.a. signifie 'suspicion de'. Un diagnostic suspecté n'est pas un diagnostic confirmé."
+      "explanation": "« V.a. » est l'abréviation de l'allemand « Verdacht auf ». V.a. signifie 'suspicion de'. Un diagnostic suspecté n'est pas un diagnostic confirmé."
     }
   },
   "q-k060": {
@@ -3266,7 +3267,7 @@ export const QUIZ_TRANSLATIONS = {
         "It always exclusively means heart failure",
         "It clearly means an unremarkable cardiac finding"
       ],
-      "explanation": "The glossary explicitly lists both meanings. A single definitive interpretation without context would be wrong here."
+      "explanation": "\"HI\" is short for the German \"Herzinfarkt / CAVE: auch Herzinsuffizienz\". The glossary explicitly lists both meanings. A single definitive interpretation without context would be wrong here."
     },
     "fr": {
       "question": "Pourquoi l'abréviation HI doit-elle être clarifiée en l'absence de contexte ?",
@@ -3276,7 +3277,7 @@ export const QUIZ_TRANSLATIONS = {
         "Elle désigne toujours exclusivement une insuffisance cardiaque",
         "Elle désigne clairement un bilan cardiaque sans particularité"
       ],
-      "explanation": "Le glossaire mentionne explicitement les deux significations. Une interprétation unique sans contexte serait ici erronée."
+      "explanation": "« HI » est l'abréviation de l'allemand « Herzinfarkt / CAVE: auch Herzinsuffizienz ». Le glossaire mentionne explicitement les deux significations. Une interprétation unique sans contexte serait ici erronée."
     }
   },
   "q-k001": {
@@ -3288,7 +3289,7 @@ export const QUIZ_TRANSLATIONS = {
         "Pressure transmission through the throat into the middle ear",
         "Heat transmission through the ear canal to the balance organ"
       ],
-      "explanation": "Bone conduction bypasses the usual air conduction pathway through the ear canal and middle ear; an audiogram displays hearing thresholds."
+      "explanation": "\"KL/Audio\" is short for the German \"Knochenleitung/Audiogramm (Hörtest)\". Bone conduction bypasses the usual air conduction pathway through the ear canal and middle ear; an audiogram displays hearing thresholds."
     },
     "fr": {
       "question": "Que met-on spécifiquement à profit lors d'un test auditif par conduction osseuse ?",
@@ -3298,7 +3299,7 @@ export const QUIZ_TRANSLATIONS = {
         "La transmission de pression via le pharynx jusqu'à l'oreille moyenne",
         "La transmission de chaleur via le conduit auditif jusqu'à l'organe de l'équilibre"
       ],
-      "explanation": "La conduction osseuse contourne la voie habituelle de conduction aérienne via le conduit auditif et l'oreille moyenne ; un audiogramme représente les seuils auditifs."
+      "explanation": "« KL/Audio » est l'abréviation de l'allemand « Knochenleitung/Audiogramm (Hörtest) ». La conduction osseuse contourne la voie habituelle de conduction aérienne via le conduit auditif et l'oreille moyenne ; un audiogramme représente les seuils auditifs."
     }
   },
   "q-k002": {
@@ -3310,7 +3311,7 @@ export const QUIZ_TRANSLATIONS = {
         "Determining the hearing threshold using tones of different pitch",
         "Recording eye movements after a temperature stimulus"
       ],
-      "explanation": "Here, Tymp. stands for tympanometry, i.e. impedance measurement. In a surgical context, a similar abbreviation may mean something different."
+      "explanation": "\"Tymp.\" is short for the German \"Impedanzmessung (Mittelohr), Tympanometrie\". Here, Tymp. stands for tympanometry, i.e. impedance measurement. In a surgical context, a similar abbreviation may mean something different."
     },
     "fr": {
       "question": "À quel examen correspond Tymp. dans la liste diagnostique de ce glossaire ?",
@@ -3320,7 +3321,7 @@ export const QUIZ_TRANSLATIONS = {
         "La détermination du seuil auditif à l'aide de sons de hauteurs différentes",
         "L'enregistrement des mouvements oculaires après un stimulus thermique"
       ],
-      "explanation": "Ici, Tymp. signifie tympanométrie, c'est-à-dire mesure de l'impédance. Dans un contexte chirurgical, une abréviation similaire peut avoir un autre sens."
+      "explanation": "« Tymp. » est l'abréviation de l'allemand « Impedanzmessung (Mittelohr), Tympanometrie ». Ici, Tymp. signifie tympanométrie, c'est-à-dire mesure de l'impédance. Dans un contexte chirurgical, une abréviation similaire peut avoir un autre sens."
     }
   },
   "q-k003": {
@@ -3332,7 +3333,7 @@ export const QUIZ_TRANSLATIONS = {
         "The function of voice production",
         "The function of salivary secretion"
       ],
-      "explanation": "'Vesti' here refers to a vestibular examination, not a pure hearing test."
+      "explanation": "\"Vesti\" is short for the German \"Gleichgewichtstest, Vestibulographie\". 'Vesti' here refers to a vestibular examination, not a pure hearing test."
     },
     "fr": {
       "question": "Quelle fonction est au centre d'un examen 'Vesti' ?",
@@ -3342,7 +3343,7 @@ export const QUIZ_TRANSLATIONS = {
         "La fonction de la production vocale",
         "La fonction de la sécrétion salivaire"
       ],
-      "explanation": "'Vesti' désigne ici un examen vestibulaire, et non un simple test auditif."
+      "explanation": "« Vesti » est l'abréviation de l'allemand « Gleichgewichtstest, Vestibulographie ». 'Vesti' désigne ici un examen vestibulaire, et non un simple test auditif."
     }
   },
   "q-k004": {
@@ -3354,7 +3355,7 @@ export const QUIZ_TRANSLATIONS = {
         "Balance test, laryngoscopy, and hearing test",
         "Middle ear function test, blood draw, and smell test"
       ],
-      "explanation": "In this ward glossary, AVT combines audiometry, vestibulography, and tympanometry. Local usage should be confirmed."
+      "explanation": "\"AVT\" is short for the German \"Audio, Vestibulographie, Tympanometrie\". In this ward glossary, AVT combines audiometry, vestibulography, and tympanometry. Local usage should be confirmed."
     },
     "fr": {
       "question": "Quelle combinaison se cache ici derrière AVT ?",
@@ -3364,7 +3365,7 @@ export const QUIZ_TRANSLATIONS = {
         "Test de l'équilibre, laryngoscopie et test auditif",
         "Test de la fonction de l'oreille moyenne, prise de sang et test olfactif"
       ],
-      "explanation": "Dans ce glossaire de service, AVT regroupe audiométrie, vestibulographie et tympanométrie. L'usage local doit être confirmé."
+      "explanation": "« AVT » est l'abréviation de l'allemand « Audio, Vestibulographie, Tympanometrie ». Dans ce glossaire de service, AVT regroupe audiométrie, vestibulographie et tympanométrie. L'usage local doit être confirmé."
     }
   },
   "q-k005": {
@@ -3376,7 +3377,7 @@ export const QUIZ_TRANSLATIONS = {
         "Taking a urine sample",
         "Taking a swab sample"
       ],
-      "explanation": "BE here stands for blood draw. The term does not specify the test ordered or the collection tube."
+      "explanation": "\"BE\" is short for the German \"Blutentnahme\". BE here stands for blood draw. The term does not specify the test ordered or the collection tube."
     },
     "fr": {
       "question": "Quel acte désigne BE dans ce glossaire de service ?",
@@ -3386,7 +3387,7 @@ export const QUIZ_TRANSLATIONS = {
         "Le prélèvement d'un échantillon d'urine",
         "Le prélèvement d'un échantillon par écouvillon"
       ],
-      "explanation": "BE désigne ici une prise de sang. Le terme ne précise ni l'analyse demandée ni le tube de prélèvement."
+      "explanation": "« BE » est l'abréviation de l'allemand « Blutentnahme ». BE désigne ici une prise de sang. Le terme ne précise ni l'analyse demandée ni le tube de prélèvement."
     }
   },
   "q-k006": {
@@ -3398,7 +3399,7 @@ export const QUIZ_TRANSLATIONS = {
         "A collection of air in the subcutaneous tissue of the neck",
         "A collection of mucus in a paranasal sinus"
       ],
-      "explanation": "PTA here stands for peritonsillar (or paratonsillar) abscess. In other medical fields, PTA has different meanings."
+      "explanation": "\"PTA\" is short for the German \"Paratonsillarabszess (auch: Peritonsillarabszess)\". PTA here stands for peritonsillar (or paratonsillar) abscess. In other medical fields, PTA has different meanings."
     },
     "fr": {
       "question": "Que signifie PTA dans le contexte diagnostique ORL de ce glossaire ?",
@@ -3408,7 +3409,7 @@ export const QUIZ_TRANSLATIONS = {
         "Une collection d'air dans le tissu sous-cutané du cou",
         "Une collection de mucus dans un sinus paranasal"
       ],
-      "explanation": "PTA désigne ici un abcès périamygdalien (ou paratonsillaire). Dans d'autres spécialités, PTA a d'autres significations."
+      "explanation": "« PTA » est l'abréviation de l'allemand « Paratonsillarabszess (auch: Peritonsillarabszess) ». PTA désigne ici un abcès périamygdalien (ou paratonsillaire). Dans d'autres spécialités, PTA a d'autres significations."
     }
   },
   "q-k007": {
@@ -3420,7 +3421,7 @@ export const QUIZ_TRANSLATIONS = {
         "Air pressure fluctuations in the throat during swallowing",
         "Eye movements caused by cold or warm stimuli"
       ],
-      "explanation": "Otoacoustic emissions are used to assess cochlear function. They do not by themselves capture overall hearing ability."
+      "explanation": "\"OAE\" is short for the German \"Überprüfung der Haarzellen im Innenohr\". Otoacoustic emissions are used to assess cochlear function. They do not by themselves capture overall hearing ability."
     },
     "fr": {
       "question": "Quel élément est examiné par les OEA (otoémissions acoustiques) ?",
@@ -3430,7 +3431,7 @@ export const QUIZ_TRANSLATIONS = {
         "Des variations de pression d'air survenant dans le pharynx lors de la déglutition",
         "Des mouvements oculaires provoqués par des stimuli froids ou chauds"
       ],
-      "explanation": "Les otoémissions acoustiques permettent d'évaluer la fonction cochléaire. Elles ne rendent pas compte à elles seules de l'ensemble de la capacité auditive."
+      "explanation": "« OAE » est l'abréviation de l'allemand « Überprüfung der Haarzellen im Innenohr ». Les otoémissions acoustiques permettent d'évaluer la fonction cochléaire. Elles ne rendent pas compte à elles seules de l'ensemble de la capacité auditive."
     }
   },
   "q-k061": {
@@ -3442,7 +3443,7 @@ export const QUIZ_TRANSLATIONS = {
         "Body height",
         "Body surface area"
       ],
-      "explanation": "T here stands for temperature. The answers name measured parameters instead of giving away the solution through a single initial letter."
+      "explanation": "\"T\" is short for the German \"Temperatur\". T here stands for temperature. The answers name measured parameters instead of giving away the solution through a single initial letter."
     },
     "fr": {
       "question": "Quel paramètre mesuré désigne T dans la documentation des signes vitaux de ce glossaire ?",
@@ -3452,7 +3453,7 @@ export const QUIZ_TRANSLATIONS = {
         "La taille corporelle",
         "La surface corporelle"
       ],
-      "explanation": "T signifie ici température. Les réponses nomment des paramètres mesurés plutôt que de révéler la solution par une seule initiale."
+      "explanation": "« T » est l'abréviation de l'allemand « Temperatur ». T signifie ici température. Les réponses nomment des paramètres mesurés plutôt que de révéler la solution par une seule initiale."
     }
   },
   "q-k062": {
@@ -3464,7 +3465,7 @@ export const QUIZ_TRANSLATIONS = {
         "The number and depth of breaths per minute",
         "The value and trend of measured body temperature"
       ],
-      "explanation": "P here means pulse. Blood pressure, respiration, and temperature are other vital parameters."
+      "explanation": "\"P\" is short for the German \"Puls\". P here means pulse. Blood pressure, respiration, and temperature are other vital parameters."
     },
     "fr": {
       "question": "Quelle observation est documentée ici sous P en tant que signe vital ?",
@@ -3474,7 +3475,7 @@ export const QUIZ_TRANSLATIONS = {
         "Le nombre et la profondeur des respirations par minute",
         "La valeur et l'évolution de la température corporelle mesurée"
       ],
-      "explanation": "P signifie ici pouls. La pression artérielle, la respiration et la température sont d'autres paramètres vitaux."
+      "explanation": "« P » est l'abréviation de l'allemand « Puls ». P signifie ici pouls. La pression artérielle, la respiration et la température sont d'autres paramètres vitaux."
     }
   },
   "q-k063": {
@@ -3486,7 +3487,7 @@ export const QUIZ_TRANSLATIONS = {
         "Respiratory rate per minute",
         "Pulse rate per minute"
       ],
-      "explanation": "RR here stands for blood pressure (after Riva-Rocci). In English-language documents, RR can also mean respiratory rate."
+      "explanation": "\"RR\" is short for the German \"Blutdruck\". RR here stands for blood pressure (after Riva-Rocci). In English-language documents, RR can also mean respiratory rate."
     },
     "fr": {
       "question": "Quel paramètre mesuré désigne RR dans ce glossaire de service ?",
@@ -3496,7 +3497,7 @@ export const QUIZ_TRANSLATIONS = {
         "La fréquence respiratoire par minute",
         "La fréquence du pouls par minute"
       ],
-      "explanation": "RR signifie ici pression artérielle (méthode de Riva-Rocci). Dans les documents en anglais, RR peut aussi désigner la fréquence respiratoire (respiratory rate)."
+      "explanation": "« RR » est l'abréviation de l'allemand « Blutdruck ». RR signifie ici pression artérielle (méthode de Riva-Rocci). Dans les documents en anglais, RR peut aussi désigner la fréquence respiratoire (respiratory rate)."
     }
   },
   "q-k064": {
@@ -3508,7 +3509,7 @@ export const QUIZ_TRANSLATIONS = {
         "Pulse rate at several times of the day",
         "Oxygen saturation at several times of the day"
       ],
-      "explanation": "BZ stands for blood glucose; a daily profile comprises several measurements according to the specific testing schedule."
+      "explanation": "\"BZ(-TP)\" is short for the German \"Blutzucker(-Tagesprofil)\". BZ stands for blood glucose; a daily profile comprises several measurements according to the specific testing schedule."
     },
     "fr": {
       "question": "Que mesure-t-on de façon répétée lors d'un profil glycémique journalier (BZ-TP) ?",
@@ -3518,7 +3519,7 @@ export const QUIZ_TRANSLATIONS = {
         "La fréquence du pouls à plusieurs moments de la journée",
         "La saturation en oxygène à plusieurs moments de la journée"
       ],
-      "explanation": "BZ désigne la glycémie ; un profil journalier comprend plusieurs mesures selon le plan d'examen établi."
+      "explanation": "« BZ(-TP) » est l'abréviation de l'allemand « Blutzucker(-Tagesprofil) ». BZ désigne la glycémie ; un profil journalier comprend plusieurs mesures selon le plan d'examen établi."
     }
   }
 };
