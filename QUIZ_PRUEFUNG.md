@@ -1,26 +1,21 @@
-# Quiz: Auswahl und fachliche Prüfung
+# Fester HNO-Fragenkatalog
 
-## Verhalten
-- `js/quiz-selection.js` erzeugt vier unterschiedliche Antworten, priorisiert die gleiche Kategorie und fällt auf andere Kategorien zurück.
-- Bei einbuchstabigen Kürzeln wie T hat ein passender Anfangsbuchstabe Vorrang vor der Kategorie. Bei längeren Kürzeln bleibt die Kategorie vorrangig.
-- Bekannte Verbindungen zwischen Kürzel, Begriff und Bedeutung werden zu Gruppen zusammengefasst. Identische Antworten und solche Gruppen werden nicht als gegnerische Lösungen verwendet. Nicht ausdrücklich im Datenbestand verknüpfte medizinische Synonyme brauchen weiterhin redaktionelle Prüfung; optionale `quizAliases` helfen dabei.
-- Fragen mit weniger als drei verschiedenen Ablenkern werden übersprungen. Die tatsächliche Rundengröße wird angezeigt.
-- Alle Kategorien haben aktuell mindestens vier Einträge. Es wurden keine Glossareinträge ergänzt.
+## Dateien
+- `js/quiz-questions.js`: einzige bearbeitbare Inhaltsquelle, genau eine feste Frage je Glossareintrag (160 insgesamt). Alle Fragen sind live.
+- `js/quiz-bank.js`: Strukturprüfung, Kategorie-Filter und zufällige Reihenfolge. Erfindet keine Antworten.
+- `js/quiz.js`: Anzeige, Bewertung und Ergebnisansicht.
 
-## Eigener Antwortpool außerhalb des Glossars
-`js/quiz-distractors.js` enthält zehn Fragensätze mit eigener richtiger Formulierung, drei Ablenkern, Erklärung und Quellenhinweis. Die Glossardaten bleiben unverändert. Kürzel werden ausdrücklich im Kontext dieses Stationsglossars abgefragt.
+## Fragen bearbeiten
+Pro Datensatz können `question`, `correctAnswer`, die drei `distractors` und `explanation` geändert werden. `glossaryId`, `term` und `category` verknüpfen den Datensatz mit dem bestehenden Glossar; IDs nicht beliebig ändern. Deutsche Texte stehen bewusst unabhängig von den kurzen Glossarbedeutungen.
 
-Die Fragensätze sind **Entwürfe**. Eine Quellenprüfung ist keine medizinische Freigabe. Die Quellen belegen die richtige Definition, nicht automatisch die Eignung jeder Falle. Die neuen Kürzel-Fallen müssen insbesondere gegen die tatsächlichen Stationskonventionen geprüft werden.
+Ein Datensatz hat vier eindeutig unterschiedliche Antworttexte. Die drei Ablenker dürfen weder Synonyme der Lösung noch ebenfalls richtige Antworten auf die Frage sein. Auf vergleichbare Satzlänge und plausible Alternativen achten. Keine falschen medizinischen Aussagen als allgemeine Merksätze formulieren. Mehrdeutige Kürzel ausdrücklich in ihren Kontext setzen. Feedback zu einzelnen Fragen kommt per Mail; dann direkt hier anpassen.
 
-## Lokal ansehen
-Die App über `http://localhost:PORT` oder `http://127.0.0.1:PORT` starten. Unter Quiz die lokale Prüfvorschau aktivieren und Richtung „Begriff → Bedeutung“ wählen. Die Fragensätze werden für die betreffenden Begriffe in normale Runden eingemischt. Jede Entwurfsfrage ist gekennzeichnet und verändert den gespeicherten Lernfortschritt nicht. Erklärungen sind wie die medizinischen Antworttexte zunächst deutsch.
+## Richtungen und Sprachen
+Das Quiz zeigt die fest formulierten deutschen Fragen, Antworten und Erklärungen. DE/EN/FR übersetzt weiterhin die Bedienung, nicht die Fragen selbst.
 
-Auf GitHub Pages sind Entwürfe ausgeschlossen. Kein versteckter URL-Schalter aktiviert sie. Die Dateien sind dennoch öffentlich einsehbar, sobald sie hochgeladen werden; die Sperre betrifft die Quiz-Auswahl.
+## Prüfen und veröffentlichen
+1. `node --test tests/*.test.mjs`
+2. Geänderte Frage lokal im Browser prüfen.
+3. Cache-Version in `sw.js` erhöhen, bevor eine neue Fassung veröffentlicht wird.
 
-## Freigabe
-Jeden Satz auf eindeutige richtige Antwort, plausible aber falsche Ablenker, Synonyme, Mehrdeutigkeit und Erklärung prüfen. Nach dokumentierter fachlicher Freigabe `status: "draft"` bei dem betreffenden Satz auf `status: "approved"` ändern und Prüfer/Datum dokumentieren. Anschließend Cache-Version in `sw.js` erhöhen. Entwürfe niemals pauschal als geprüft markieren.
-
-## Prüfung der Software
-`node tests/quiz-selection.test.mjs`
-
-Die Tests prüfen alle Einträge in allen drei Richtungen, vier eindeutige Optionen, wechselnde Lösungspositionen, Kategorie-Fallback, verknüpfte Synonyme, zu kleine Pools, Entwurfssperre sowie T-Antworten mit gleichem Anfangsbuchstaben. Ein realer Browser-/Gerätetest bleibt zusätzlich erforderlich.
+Die Softwaretests prüfen nur Struktur (eindeutige IDs, vier unterschiedliche Antworten, Glossar-Zuordnung), keine medizinische Richtigkeit.

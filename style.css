@@ -588,13 +588,6 @@ input[type=search]:focus,select:focus,.btn:focus-visible,.card:focus-visible,.op
   overflow-wrap: anywhere
 }
 
-.qtr {
-  text-align: center;
-  color: var(--c-ink,var(--muted));
-  margin: .5rem 0 0;
-  font-size: .95rem;
-  overflow-wrap: anywhere
-}
 
 .btn {
   display: block;
@@ -1178,4 +1171,9 @@ select {
     outline: 3px solid var(--brand);
     outline-offset: -3px;
   }
+}
+
+.btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
 }

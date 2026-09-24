@@ -19,9 +19,7 @@ const VERSION = '0.3.46';
 function relabel() {
   applyStatic({ v: VERSION });
   fillCatSelect($('k-cat'), 1);
-  fillCatSelect($('q-cat'), 4);
   fillDirSelect($('k-dir'));
-  fillDirSelect($('q-dir'));
   refreshGlossar();
   updateKInfo();
   refreshKarten();

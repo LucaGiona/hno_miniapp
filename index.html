@@ -115,12 +115,6 @@
       <h2 class="view-title" data-i="q_h">Quiz</h2>
       <label class="lbl" for="q-cat" data-i="cat_lbl">Kategorie</label>
       <select id="q-cat"></select>
-      <label class="lbl" for="q-dir" data-i="dir_lbl">Richtung</label>
-      <select id="q-dir">
-        <option value="fwd">Begriff → Bedeutung</option>
-        <option value="rev">Bedeutung → Begriff</option>
-        <option value="mix">Gemischt</option>
-      </select>
       <label class="lbl" for="q-len" data-i="q_len">Anzahl Fragen</label>
       <select id="q-len">
         <option value="5">5</option>
@@ -128,23 +122,16 @@
         <option value="20">20</option>
         <option value="30">30</option>
       </select>
-      <label id="q-drafts-wrap" class="lbl" hidden>
-        <input id="q-drafts" type="checkbox">
-        <span data-i="q_drafts">Lokale Prüfvorschau: ungeprüfte Verwechslungsfallen einbeziehen</span>
-      </label>
-      <p id="q-empty" class="small" data-i="q_empty" role="status" hidden></p>
       <button id="q-start" class="btn primary" data-i="q_start">Quiz starten</button>
     </div>
     <div id="quiz-run" hidden>
       <div class="progressbar"><div id="q-bar"></div></div>
       <p class="muted small center" id="q-pos"></p>
       <p class="muted small center" id="q-prompt-label"></p>
-      <h2 id="q-question" class="question"></h2>
-      <p id="q-draft-warning" class="small" data-i="q_draft_warning" hidden></p>
-      <div id="q-options" class="options"></div>
+      <h2 id="q-question" class="question" lang="de"></h2>
+      <div id="q-options" class="options" lang="de"></div>
       <p id="q-feedback" class="feedback" role="status"></p>
       <p id="q-explanation" class="small" lang="de" hidden></p>
-      <p id="q-tr" class="qtr" hidden></p>
       <button id="q-next" class="btn primary" hidden>Weiter</button>
     </div>
     <div id="quiz-done" hidden>

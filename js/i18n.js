@@ -4,9 +4,6 @@ import { getLang } from './lang.js';
 
 const S = {
   de: {
-    q_drafts: "Lokale Prüfvorschau: ungeprüfte Verwechslungsfallen einbeziehen",
-    q_draft_warning: "Prüfentwurf – noch nicht medizinisch freigegeben. Wird nicht als Lernfortschritt gespeichert.",
-    q_empty: "Keine eindeutigen Fragen mit vier verschiedenen Antworten verfügbar. Bitte eine andere Kategorie wählen.",
 
     net_off: 'offline',
     lang_group: 'Sprache und Übersetzung',
@@ -46,10 +43,6 @@ const S = {
     q_h: 'Quiz', q_len: 'Anzahl Fragen', q_start: 'Quiz starten',
     q_pos: 'Frage {i} von {n}',
     q_next: 'Weiter', q_result: 'Ergebnis anzeigen',
-    q_what_k: 'Was bedeutet dieses Kürzel in diesem Stationsglossar?',
-    q_what_f: 'Was bedeutet dieser Fachbegriff?',
-    q_rev: 'Welcher Begriff passt zu dieser Bedeutung?',
-    q_tr: 'Wie heißt das auf Deutsch?',
     ok: 'Richtig', bad: 'Leider falsch',
     q_done_h: 'Ergebnis',
     q_review: 'Das solltest du wiederholen:',
@@ -64,7 +57,7 @@ const S = {
     about_glossary: "<strong>Glossar:</strong> Suche nach Kürzeln, Fachbegriffen oder deren Bedeutung.",
     about_cards: "<strong>Karteikarten:</strong> Überlege dir die Antwort, blende die Lösung ein und markiere, ob du den Begriff schon kennst oder weiter üben möchtest.",
     about_quiz: "<strong>Quiz:</strong> Teste dein Wissen und wiederhole Fragen, die noch nicht sicher sitzen.",
-    about_languages: "<strong>Sprachen:</strong> Mit DE / EN / FR wechselst du die Sprache der Oberfläche und blendest Übersetzungen ein. Bei Karteikarten und Quiz kannst du zusätzlich „Übersetzung → Deutsch“ üben. Die deutschen Kürzel und Fachbegriffe bleiben erhalten.",
+    about_languages: "<strong>Sprachen:</strong> Mit DE / EN / FR wechselst du die Oberfläche und blendest Begriffsübersetzungen ein. Bei Karteikarten kannst du zusätzlich „Übersetzung → Deutsch“ üben. Die festen Quizfragen und Erklärungen sind zunächst deutsch.",
     about_offline: "Nach dem ersten vollständigen Laden kannst du die Lernhilfe auch ohne Internet nutzen. Dein Lernfortschritt wird nur auf diesem Gerät gespeichert.",
     about_share_h: "Weiterempfehlen",
     about_share_text: "Über diesen Link oder den QR-Code lässt sich die App an Kolleginnen und Kollegen weitergeben.",
@@ -77,9 +70,6 @@ const S = {
     close: 'Schließen'
   },
   en: {
-    q_drafts: "Local review: include unreviewed distractors",
-    q_draft_warning: "Review draft – not medically approved. Does not change learning progress.",
-    q_empty: "No unambiguous questions with four distinct answers available. Please choose another category.",
 
     net_off: 'offline',
     lang_group: 'Language and translation',
@@ -119,10 +109,6 @@ const S = {
     q_h: 'Quiz', q_len: 'Number of questions', q_start: 'Start quiz',
     q_pos: 'Question {i} of {n}',
     q_next: 'Next', q_result: 'Show result',
-    q_what_k: 'What does this abbreviation mean in this ward glossary?',
-    q_what_f: 'What does this technical term mean?',
-    q_rev: 'Which term matches this meaning?',
-    q_tr: 'What is this called in German?',
     ok: 'Correct', bad: 'Incorrect',
     q_done_h: 'Result',
     q_review: 'You should review these:',
@@ -137,7 +123,7 @@ const S = {
     about_glossary: "<strong>Glossary:</strong> Search for abbreviations, technical terms or their meanings.",
     about_cards: "<strong>Flashcards:</strong> Think of the answer, reveal the solution and mark whether you already know the term or would like more practice.",
     about_quiz: "<strong>Quiz:</strong> Test your knowledge and revisit questions you are not yet confident about.",
-    about_languages: "<strong>Languages:</strong> Use DE / EN / FR to change the interface language and display translations. Flashcards and quizzes also let you practise “Translation → German”. The German abbreviations and technical terms remain available.",
+    about_languages: "<strong>Languages:</strong> DE / EN / FR changes the interface and shows term translations. Flashcards also support “Translation → German”. The fixed quiz questions and explanations are currently in German.",
     about_offline: "Once the app has fully loaded for the first time, you can also use it without an internet connection. Your learning progress is stored only on this device.",
     about_share_h: "Share this app",
     about_share_text: "Use this link or QR code to pass the app on to colleagues.",
@@ -150,9 +136,6 @@ const S = {
     close: 'Close'
   },
   fr: {
-    q_drafts: "Aperçu local : inclure les distracteurs non vérifiés",
-    q_draft_warning: "Brouillon à vérifier – non validé médicalement. Ne modifie pas la progression.",
-    q_empty: "Aucune question non ambiguë avec quatre réponses distinctes disponible. Choisis une autre catégorie.",
 
     net_off: 'hors ligne',
     lang_group: 'Langue et traduction',
@@ -192,10 +175,6 @@ const S = {
     q_h: 'Quiz', q_len: 'Nombre de questions', q_start: 'Démarrer le quiz',
     q_pos: 'Question {i} sur {n}',
     q_next: 'Suivant', q_result: 'Voir le résultat',
-    q_what_k: 'Que signifie ce sigle dans ce glossaire du service ?',
-    q_what_f: 'Que signifie ce terme technique ?',
-    q_rev: 'Quel terme correspond à cette signification ?',
-    q_tr: 'Comment dit-on cela en allemand ?',
     ok: 'Correct', bad: 'Faux',
     q_done_h: 'Résultat',
     q_review: 'À revoir :',
@@ -210,7 +189,7 @@ const S = {
     about_glossary: "<strong>Glossaire :</strong> Recherche des sigles, des termes techniques ou leur signification.",
     about_cards: "<strong>Cartes mémoire :</strong> Réfléchis à la réponse, affiche la solution et indique si tu connais déjà le terme ou si tu souhaites continuer à le réviser.",
     about_quiz: "<strong>Quiz :</strong> Teste tes connaissances et reprends les questions que tu ne maîtrises pas encore.",
-    about_languages: "<strong>Langues :</strong> Avec DE / EN / FR, change la langue de l’interface et affiche les traductions. Les cartes mémoire et les quiz permettent aussi de s’entraîner dans le sens « Traduction → Allemand ». Les sigles et termes techniques allemands restent disponibles.",
+    about_languages: "<strong>Langues :</strong> DE / EN / FR change l’interface et affiche les traductions des termes. Les cartes permettent aussi de travailler dans le sens « Traduction → Allemand ». Les questions fixes du quiz et leurs explications sont pour le moment en allemand.",
     about_offline: "Après le premier chargement complet, tu peux aussi utiliser cette aide sans connexion internet. Ta progression est enregistrée uniquement sur cet appareil.",
     about_share_h: "Partager l’application",
     about_share_text: "Ce lien ou ce QR-code permet de transmettre l’application à des collègues.",

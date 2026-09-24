@@ -1,146 +1,151 @@
-import { buildQuestion, localDraftPreview } from './quiz-selection.js';
-/* Quiz (Multiple Choice) */
-import { $, el, clear, shuffle } from './utils.js';
-import { DATA, inCat, fillCatSelect, fillDirSelect, resolveMode, colorize } from './catalog.js';
-import { getLang, getTr, langBadge } from './lang.js';
-import { t } from './i18n.js';
+/* Quiz: ausschließlich redaktionell hinterlegte Fragen und Antworten. */
+import { $, el, clear } from './utils.js';
+import { colorize } from './catalog.js';
+import { catName, t } from './i18n.js';
+import { getLang } from './lang.js';
 import { box, setBox } from './storage.js';
+import { availableQuestions, createRound, validateBank } from './quiz-bank.js';
+import { QUIZ_TRANSLATIONS } from './quiz-translations.js';
 
 let Q = null;
 
-function qShowPart(p) {
-  ['setup', 'run', 'done'].forEach((n) => { $('quiz-' + n).hidden = n !== p; });
+function showPart(part) {
+  ['setup', 'run', 'done'].forEach(name => { $('quiz-' + name).hidden = name !== part; });
 }
 
-function makeQuestion(e, mode, poolAll) {
-  const allowDrafts = localDraftPreview(window.location) && Boolean($('q-drafts')?.checked);
-  const question = buildQuestion(e, mode, poolAll, { allowDrafts });
-  if (!question) return null;
-  return { ...question, lang: getLang(), prompt: mode === 'tr' ? getTr(e) : mode === 'rev' ? e.bedeutung : e.begriff };
+/* Übersetzte Anzeige einer Frage; fehlt eine Übersetzung, wird auf Deutsch zurückgefallen. */
+function localize(q, lang) {
+  const tr = lang !== 'de' && QUIZ_TRANSLATIONS[q.id] && QUIZ_TRANSLATIONS[q.id][lang];
+  return {
+    question: (tr && tr.question) || q.question,
+    correctAnswer: (tr && tr.correctAnswer) || q.correctAnswer,
+    distractors: (tr && tr.distractors) || q.distractors,
+    explanation: (tr && tr.explanation) || q.explanation
+  };
 }
 
-/* Alle sprachabhängigen Texte der aktuellen Frage (auch nach einem Sprachwechsel aufrufbar) */
-function qTexts() {
-  const q = Q.qs[Q.i];
-  $('q-pos').textContent = t('q_pos', { i: Q.i + 1, n: Q.qs.length });
-  $('q-prompt-label').textContent = q.mode === 'tr' ? t('q_tr')
-    : q.mode === 'rev' ? t('q_rev')
-    : t(q.e.typ === 'kuerzel' ? 'q_what_k' : 'q_what_f');
-  $('q-draft-warning').hidden = !q.draft;
-  const explanation = $('q-explanation');
-  explanation.textContent = q.res ? q.explanation : '';
-  explanation.hidden = !explanation.textContent;
-  const fb = $('q-feedback'), box2 = $('q-tr');
-  clear(box2);
-  if (q.res) {
-    fb.textContent = t(q.res === 'ok' ? 'ok' : 'bad');
-    fb.style.color = q.res === 'ok' ? 'var(--good)' : 'var(--bad)';
-    if (q.mode === 'tr') {
-      box2.appendChild(document.createTextNode(q.e.begriff + ' – ' + q.e.bedeutung));
-    } else if (getTr(q.e)) {
-      const s = el('span'); s.lang = getLang();
-      s.appendChild(langBadge()); s.appendChild(document.createTextNode(getTr(q.e)));
-      box2.appendChild(s);
-    }
-    $('q-next').textContent = Q.i === Q.qs.length - 1 ? t('q_result') : t('q_next');
-  } else {
-    fb.textContent = '';
+/* q.order enthält 4 gemischte Slot-Indizes: 0 = richtige Antwort, 1..3 = distractors[0..2]. */
+function optionTexts(loc) {
+  return [loc.correctAnswer, ...loc.distractors];
+}
+
+function updateSetup() {
+  const pool = availableQuestions();
+  const select = $('q-cat'), previous = select.value;
+  clear(select);
+  const all = el('option', null, t('all_n', { n: pool.length }));
+  all.value = 'ALL'; select.append(all);
+  const categories = [...new Set(pool.map(q => q.category))].sort((a, b) => catName(a).localeCompare(catName(b)));
+  for (const category of categories) {
+    const option = el('option', null, `${catName(category)} (${pool.filter(q => q.category === category).length})`);
+    option.value = category; select.append(option);
   }
-  box2.hidden = !box2.firstChild;
+  select.value = categories.includes(previous) ? previous : 'ALL';
+  $('q-start').disabled = !pool.length;
 }
 
-function qRender() {
+function questionTexts() {
   const q = Q.qs[Q.i];
-  colorize($('quiz-run'), q.e.kategorie);
-  $('q-bar').style.width = (Q.i / Q.qs.length * 100) + '%';
-  $('q-question').textContent = q.prompt;
-  if (q.mode === 'tr') $('q-question').lang = q.lang; else $('q-question').removeAttribute('lang');
+  const loc = localize(q, getLang());
+  $('q-pos').textContent = t('q_pos', { i: Q.i + 1, n: Q.qs.length });
+  $('q-prompt-label').textContent = catName(q.category);
+  const explanation = $('q-explanation');
+  explanation.textContent = q.res ? loc.explanation : '';
+  explanation.hidden = !q.res;
+  $('q-feedback').textContent = q.res ? t(q.res === 'ok' ? 'ok' : 'bad') : '';
+  $('q-feedback').style.color = q.res === 'ok' ? 'var(--good)' : 'var(--bad)';
+  $('q-next').textContent = t(Q.i === Q.qs.length - 1 ? 'q_result' : 'q_next');
+}
+
+function renderQuestion() {
+  const q = Q.qs[Q.i], lang = getLang();
+  const loc = localize(q, lang);
+  const texts = optionTexts(loc);
+  colorize($('quiz-run'), q.category);
+  $('q-bar').style.width = `${Q.i / Q.qs.length * 100}%`;
+  $('q-question').textContent = loc.question;
+  $('q-question').lang = lang;
   $('q-next').hidden = true;
-  qTexts();
+  questionTexts();
   const wrap = $('q-options');
   clear(wrap);
-  q.options.forEach((o) => {
-    const b = el('button', 'opt', o);
-    b.type = 'button';
-    b.addEventListener('click', () => qPick(b, o));
-    wrap.appendChild(b);
+  wrap.lang = lang;
+  q.order.forEach(slot => {
+    const button = el('button', 'opt', texts[slot]);
+    button.type = 'button';
+    button.addEventListener('click', () => pick(button, slot));
+    wrap.append(button);
   });
   Q.locked = false;
 }
 
-function qPick(btn, val) {
+function pick(button, slot) {
   if (Q.locked) return;
   Q.locked = true;
-  const q = Q.qs[Q.i], ok = val === q.correct;
-  Array.prototype.forEach.call($('q-options').children, (b) => {
-    b.disabled = true;
-    if (b.textContent === q.correct) b.classList.add('right');
+  const q = Q.qs[Q.i], correct = slot === 0;
+  q.chosen = slot;
+  q.res = correct ? 'ok' : 'bad';
+  const buttons = $('q-options').children;
+  q.order.forEach((s, i) => {
+    buttons[i].disabled = true;
+    if (s === 0) buttons[i].classList.add('right');
   });
-  if (ok) {
-    Q.score++; if (!q.draft) setBox(q.e.id, box(q.e.id) + 1);
-    q.res = 'ok';
-  } else {
-    btn.classList.add('wrong'); Q.wrong.push(q); if (!q.draft) setBox(q.e.id, 0);
-    q.res = 'bad';
-  }
-  qTexts();
+  if (correct) Q.score++;
+  else { button.classList.add('wrong'); Q.wrong.push(q); }
+  setBox(q.glossaryId, correct ? box(q.glossaryId) + 1 : 0);
+  questionTexts();
   $('q-next').hidden = false;
   $('q-next').focus();
 }
 
-function qDone() {
-  $('q-score').textContent = Q.score + ' / ' + Q.qs.length;
-  const w = $('q-wrong');
-  clear(w);
-  if (Q.wrong.length) {
-    w.appendChild(el('p', 'muted small', t('q_review')));
-    Q.wrong.forEach((q) => {
-      const d = el('div', 'wrong-item');
-      d.appendChild(el('strong', null, q.e.begriff));
-      d.appendChild(document.createTextNode(' – ' + q.e.bedeutung));
-      if (q.explanation) d.appendChild(el('p', 'small', q.explanation));
-      if (getTr(q.e)) d.appendChild(el('div', 'muted small', getTr(q.e)));
-      w.appendChild(d);
-    });
-  } else {
-    w.appendChild(el('p', 'center', t('q_allright')));
+function renderResult() {
+  $('q-score').textContent = `${Q.score} / ${Q.qs.length}`;
+  const wrap = $('q-wrong'); clear(wrap);
+  if (!Q.wrong.length) { wrap.append(el('p', 'center', t('q_allright'))); return; }
+  wrap.append(el('p', 'muted small', t('q_review')));
+  const lang = getLang();
+  for (const q of Q.wrong) {
+    const loc = localize(q, lang);
+    const item = el('div', 'wrong-item'); item.lang = lang;
+    item.append(el('strong', null, loc.question));
+    item.append(el('p', null, loc.correctAnswer));
+    item.append(el('p', 'small', loc.explanation));
+    wrap.append(item);
   }
 }
 
-function qFinish() {
-  $('q-bar').style.width = '100%';
-  qDone();
-  qShowPart('done');
-}
-
-/* Nach Sprachwechsel: laufende Frage bzw. Ergebnis neu beschriften */
 export function refreshQuiz() {
+  updateSetup();
   if (!Q) return;
-  if (!$('quiz-run').hidden) qTexts();
-  else if (!$('quiz-done').hidden) qDone();
+  if (!$('quiz-run').hidden) {
+    const q = Q.qs[Q.i], lang = getLang();
+    const loc = localize(q, lang);
+    const texts = optionTexts(loc);
+    $('q-question').textContent = loc.question;
+    $('q-question').lang = lang;
+    const wrap = $('q-options');
+    wrap.lang = lang;
+    q.order.forEach((slot, i) => { wrap.children[i].textContent = texts[slot]; });
+    questionTexts();
+  } else if (!$('quiz-done').hidden) renderResult();
 }
 
 export function initQuiz() {
-  $('q-drafts-wrap').hidden = !localDraftPreview(window.location);
-  fillCatSelect($('q-cat'), 4);
-  fillDirSelect($('q-dir'));
-  $('q-next').addEventListener('click', () => {
-    Q.i++;
-    if (Q.i >= Q.qs.length) qFinish(); else qRender();
-  });
+  const bankErrors = validateBank();
+  if (bankErrors.length) console.error('Quiz-Katalog prüfen:', bankErrors);
+  updateSetup();
   $('q-start').addEventListener('click', () => {
-    const cat = $('q-cat').value, dir = $('q-dir').value, len = parseInt($('q-len').value, 10);
-    const pool = inCat(cat);
-    if (pool.length < 4) return;
-    const qs = shuffle(pool).map((e) => makeQuestion(e, resolveMode(dir, e), DATA)).filter(Boolean).slice(0, len);
-    $('q-empty').hidden = qs.length > 0;
-    if (!qs.length) return;
-    Q = {
-      qs,
-      i: 0, score: 0, wrong: [], locked: false
-    };
-    qShowPart('run');
-    qRender();
+    const pool = availableQuestions({ category: $('q-cat').value });
+    const qs = createRound(pool, Number($('q-len').value));
+    if (!qs.length) { updateSetup(); return; }
+    Q = { qs, i: 0, score: 0, wrong: [], locked: false };
+    showPart('run'); renderQuestion();
   });
-  $('q-restart').addEventListener('click', () => qShowPart('setup'));
+  $('q-next').addEventListener('click', () => {
+    if (!Q || !Q.locked || Q.i >= Q.qs.length) return;
+    Q.i++;
+    if (Q.i < Q.qs.length) renderQuestion();
+    else { $('q-bar').style.width = '100%'; renderResult(); showPart('done'); }
+  });
+  $('q-restart').addEventListener('click', () => { Q = null; showPart('setup'); updateSetup(); });
 }
