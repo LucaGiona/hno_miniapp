@@ -1,6 +1,7 @@
+import { buildQuestion, localDraftPreview } from './quiz-selection.js';
 /* Quiz (Multiple Choice) */
 import { $, el, clear, shuffle } from './utils.js';
-import { DATA, inCat, fillCatSelect, fillDirSelect, resolveMode, trAnswer, colorize } from './catalog.js';
+import { DATA, inCat, fillCatSelect, fillDirSelect, resolveMode, colorize } from './catalog.js';
 import { getLang, getTr, langBadge } from './lang.js';
 import { t } from './i18n.js';
 import { box, setBox } from './storage.js';
@@ -12,21 +13,10 @@ function qShowPart(p) {
 }
 
 function makeQuestion(e, mode, poolAll) {
-  const tr = mode === 'tr';
-  const field = tr ? trAnswer(e).field : mode === 'rev' ? 'begriff' : 'bedeutung';
-  const correct = e[field];
-  const base = poolAll.filter((x) => x.id !== e.id && (!tr || x.typ === e.typ));
-  const sameCat = base.filter((x) => x.kategorie === e.kategorie);
-  const sameTyp = base.filter((x) => x.typ === e.typ && x.kategorie !== e.kategorie);
-  const cand = shuffle(sameCat).concat(shuffle(sameTyp));
-  const opts = [correct];
-  for (let i = 0; i < cand.length && opts.length < 4; i++) {
-    if (!opts.includes(cand[i][field])) opts.push(cand[i][field]);
-  }
-  return {
-    e, mode, correct, options: shuffle(opts), lang: getLang(), res: null,
-    prompt: tr ? getTr(e) : mode === 'rev' ? e.bedeutung : e.begriff
-  };
+  const allowDrafts = localDraftPreview(window.location) && Boolean($('q-drafts')?.checked);
+  const question = buildQuestion(e, mode, poolAll, { allowDrafts });
+  if (!question) return null;
+  return { ...question, lang: getLang(), prompt: mode === 'tr' ? getTr(e) : mode === 'rev' ? e.bedeutung : e.begriff };
 }
 
 /* Alle sprachabhängigen Texte der aktuellen Frage (auch nach einem Sprachwechsel aufrufbar) */
@@ -36,6 +26,10 @@ function qTexts() {
   $('q-prompt-label').textContent = q.mode === 'tr' ? t('q_tr')
     : q.mode === 'rev' ? t('q_rev')
     : t(q.e.typ === 'kuerzel' ? 'q_what_k' : 'q_what_f');
+  $('q-draft-warning').hidden = !q.draft;
+  const explanation = $('q-explanation');
+  explanation.textContent = q.res ? q.explanation : '';
+  explanation.hidden = !explanation.textContent;
   const fb = $('q-feedback'), box2 = $('q-tr');
   clear(box2);
   if (q.res) {
@@ -83,10 +77,10 @@ function qPick(btn, val) {
     if (b.textContent === q.correct) b.classList.add('right');
   });
   if (ok) {
-    Q.score++; setBox(q.e.id, box(q.e.id) + 1);
+    Q.score++; if (!q.draft) setBox(q.e.id, box(q.e.id) + 1);
     q.res = 'ok';
   } else {
-    btn.classList.add('wrong'); Q.wrong.push(q); setBox(q.e.id, 0);
+    btn.classList.add('wrong'); Q.wrong.push(q); if (!q.draft) setBox(q.e.id, 0);
     q.res = 'bad';
   }
   qTexts();
@@ -104,6 +98,7 @@ function qDone() {
       const d = el('div', 'wrong-item');
       d.appendChild(el('strong', null, q.e.begriff));
       d.appendChild(document.createTextNode(' – ' + q.e.bedeutung));
+      if (q.explanation) d.appendChild(el('p', 'small', q.explanation));
       if (getTr(q.e)) d.appendChild(el('div', 'muted small', getTr(q.e)));
       w.appendChild(d);
     });
@@ -126,6 +121,7 @@ export function refreshQuiz() {
 }
 
 export function initQuiz() {
+  $('q-drafts-wrap').hidden = !localDraftPreview(window.location);
   fillCatSelect($('q-cat'), 4);
   fillDirSelect($('q-dir'));
   $('q-next').addEventListener('click', () => {
@@ -136,9 +132,11 @@ export function initQuiz() {
     const cat = $('q-cat').value, dir = $('q-dir').value, len = parseInt($('q-len').value, 10);
     const pool = inCat(cat);
     if (pool.length < 4) return;
-    const picked = shuffle(pool).slice(0, Math.min(len, pool.length));
+    const qs = shuffle(pool).map((e) => makeQuestion(e, resolveMode(dir, e), DATA)).filter(Boolean).slice(0, len);
+    $('q-empty').hidden = qs.length > 0;
+    if (!qs.length) return;
     Q = {
-      qs: picked.map((e) => makeQuestion(e, resolveMode(dir, e), DATA)),
+      qs,
       i: 0, score: 0, wrong: [], locked: false
     };
     qShowPart('run');

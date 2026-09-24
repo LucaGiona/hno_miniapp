@@ -128,6 +128,11 @@
         <option value="20">20</option>
         <option value="30">30</option>
       </select>
+      <label id="q-drafts-wrap" class="lbl" hidden>
+        <input id="q-drafts" type="checkbox">
+        <span data-i="q_drafts">Lokale Prüfvorschau: ungeprüfte Verwechslungsfallen einbeziehen</span>
+      </label>
+      <p id="q-empty" class="small" data-i="q_empty" role="status" hidden></p>
       <button id="q-start" class="btn primary" data-i="q_start">Quiz starten</button>
     </div>
     <div id="quiz-run" hidden>
@@ -135,8 +140,10 @@
       <p class="muted small center" id="q-pos"></p>
       <p class="muted small center" id="q-prompt-label"></p>
       <h2 id="q-question" class="question"></h2>
+      <p id="q-draft-warning" class="small" data-i="q_draft_warning" hidden></p>
       <div id="q-options" class="options"></div>
       <p id="q-feedback" class="feedback" role="status"></p>
+      <p id="q-explanation" class="small" lang="de" hidden></p>
       <p id="q-tr" class="qtr" hidden></p>
       <button id="q-next" class="btn primary" hidden>Weiter</button>
     </div>

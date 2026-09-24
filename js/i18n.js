@@ -4,6 +4,10 @@ import { getLang } from './lang.js';
 
 const S = {
   de: {
+    q_drafts: "Lokale Prüfvorschau: ungeprüfte Verwechslungsfallen einbeziehen",
+    q_draft_warning: "Prüfentwurf – noch nicht medizinisch freigegeben. Wird nicht als Lernfortschritt gespeichert.",
+    q_empty: "Keine eindeutigen Fragen mit vier verschiedenen Antworten verfügbar. Bitte eine andere Kategorie wählen.",
+
     net_off: 'offline',
     lang_group: 'Sprache und Übersetzung',
     lang_de_title: 'Deutsch – ohne Übersetzung',
@@ -42,7 +46,7 @@ const S = {
     q_h: 'Quiz', q_len: 'Anzahl Fragen', q_start: 'Quiz starten',
     q_pos: 'Frage {i} von {n}',
     q_next: 'Weiter', q_result: 'Ergebnis anzeigen',
-    q_what_k: 'Was bedeutet dieses Kürzel?',
+    q_what_k: 'Was bedeutet dieses Kürzel in diesem Stationsglossar?',
     q_what_f: 'Was bedeutet dieser Fachbegriff?',
     q_rev: 'Welcher Begriff passt zu dieser Bedeutung?',
     q_tr: 'Wie heißt das auf Deutsch?',
@@ -73,6 +77,10 @@ const S = {
     close: 'Schließen'
   },
   en: {
+    q_drafts: "Local review: include unreviewed distractors",
+    q_draft_warning: "Review draft – not medically approved. Does not change learning progress.",
+    q_empty: "No unambiguous questions with four distinct answers available. Please choose another category.",
+
     net_off: 'offline',
     lang_group: 'Language and translation',
     lang_de_title: 'German – no translation',
@@ -111,7 +119,7 @@ const S = {
     q_h: 'Quiz', q_len: 'Number of questions', q_start: 'Start quiz',
     q_pos: 'Question {i} of {n}',
     q_next: 'Next', q_result: 'Show result',
-    q_what_k: 'What does this abbreviation mean?',
+    q_what_k: 'What does this abbreviation mean in this ward glossary?',
     q_what_f: 'What does this technical term mean?',
     q_rev: 'Which term matches this meaning?',
     q_tr: 'What is this called in German?',
@@ -142,6 +150,10 @@ const S = {
     close: 'Close'
   },
   fr: {
+    q_drafts: "Aperçu local : inclure les distracteurs non vérifiés",
+    q_draft_warning: "Brouillon à vérifier – non validé médicalement. Ne modifie pas la progression.",
+    q_empty: "Aucune question non ambiguë avec quatre réponses distinctes disponible. Choisis une autre catégorie.",
+
     net_off: 'hors ligne',
     lang_group: 'Langue et traduction',
     lang_de_title: 'Allemand – sans traduction',
@@ -180,7 +192,7 @@ const S = {
     q_h: 'Quiz', q_len: 'Nombre de questions', q_start: 'Démarrer le quiz',
     q_pos: 'Question {i} sur {n}',
     q_next: 'Suivant', q_result: 'Voir le résultat',
-    q_what_k: 'Que signifie ce sigle ?',
+    q_what_k: 'Que signifie ce sigle dans ce glossaire du service ?',
     q_what_f: 'Que signifie ce terme technique ?',
     q_rev: 'Quel terme correspond à cette signification ?',
     q_tr: 'Comment dit-on cela en allemand ?',
