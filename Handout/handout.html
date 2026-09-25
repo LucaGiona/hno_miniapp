@@ -1,0 +1,212 @@
+<!doctype html>
+<!-- Quelle für Handout_HNO_Mini_App.pdf (2 Seiten A4).
+     PDF erzeugen:
+     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer \
+       --print-to-pdf=Handout/Handout_HNO_Mini_App.pdf Handout/handout.html -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Handout HNO Mini-App</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --text: #252238; --muted: #666478; --line: #e3e0ea;
+    --brand: #705b98; --brand-soft: #f0ecf6;
+    --warn: #8a5a1b; --warn-soft: #fbf3e2;
+    --bad: #995466; --bad-soft: #f8edf0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--text); font-size: 11.5pt; line-height: 1.4;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm; height: 297mm; padding: 11mm 13mm 10mm;
+    display: flex; flex-direction: column; overflow: hidden;
+    page-break-after: always; break-after: page;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page > * { flex-shrink: 0; }
+  .rainbow {
+    height: 2.2mm; border-radius: 2mm; margin-bottom: 5mm;
+    background: linear-gradient(90deg, #e0457b, #f08a3c, #e8c53a, #5cb85c, #3fa7d6, #705b98);
+  }
+  b { font-weight: 700; }
+
+  header { display: flex; align-items: center; gap: 4mm; margin-bottom: 4mm; }
+  header img { width: 16mm; height: 16mm; border-radius: 3.5mm; }
+  h1 { margin: 0; font-size: 23pt; color: var(--brand); line-height: 1.1; }
+  .sub { color: var(--brand); font-size: 10.5pt; margin-top: .5mm; }
+
+  .top { display: grid; grid-template-columns: 1fr auto; gap: 4mm; margin-bottom: 3mm; }
+  .intro {
+    background: var(--brand-soft); border-left: 1.5mm solid var(--brand);
+    border-radius: 3mm; padding: 3mm 4.5mm; align-self: stretch;
+    
+  }
+  .pill {
+    display: inline-block; align-self: flex-start; background: var(--brand); color: #fff;
+    font-weight: 700; font-size: 11pt; letter-spacing: .06em;
+    padding: 1.4mm 4.5mm; border-radius: 10mm; margin-bottom: 3mm;
+  }
+
+  .steps { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; align-content: space-between; gap: 4mm; flex: 1 1 0; min-height: 0; }
+  .step {
+    border: .35mm solid var(--line); border-radius: 4mm; padding: 4mm 4.5mm;
+    display: flex; flex-direction: column;
+  }
+  .step h2 { display: flex; align-items: center; gap: 3mm; margin: 0 0 1.5mm; font-size: 14.5pt; }
+  .num {
+    flex: none; width: 9mm; height: 9mm; border-radius: 50%; background: var(--brand); color: #fff;
+    display: grid; place-items: center; font-size: 13pt; font-weight: 700;
+  }
+  .step p { margin: 0 0 2mm; }
+  .shots { margin-top: auto; display: flex; justify-content: center; gap: 5mm; }
+  .shot { width: 23mm; text-align: center; font-size: 9pt; color: var(--muted); }
+  .shot img {
+    width: 100%; display: block; border: .35mm solid var(--line); border-radius: 2.5mm;
+    box-shadow: 0 .5mm 1.5mm rgba(0,0,0,.12);
+  }
+  .shot.wrong img { border: .6mm solid var(--bad); }
+  .shot .cap { margin-top: 1.2mm; white-space: nowrap; }
+  .shot.right .cap { color: #416d59; font-weight: 700; }
+  .shot.wrong .cap { color: var(--bad); font-weight: 700; }
+
+  h3 { font-size: 16pt; color: var(--brand); margin: 0 0 3mm; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; margin-bottom: 5mm; }
+  .share { display: flex; gap: 5mm; align-items: flex-start; }
+  .share .shot { width: 42mm; flex: none; }
+  .qrbox {
+    border: .6mm solid var(--brand); border-radius: 4mm; padding: 2.5mm 3mm;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; width: 46mm;
+  }
+  .qrbox img { width: 32mm; height: 32mm; }
+  .qrbox .label { font-size: 9pt; color: var(--muted); line-height: 1.25; }
+  .url { font-size: 11pt; font-weight: 700; color: var(--brand); margin: 1mm 0; word-break: break-all; }
+  .other p { margin: 0 0 3mm; }
+  .intern {
+    background: var(--bad-soft); border-left: 1.5mm solid var(--bad); border-radius: 3mm;
+    padding: 4mm 5mm; display: flex; gap: 5mm; align-items: center; margin-bottom: 6mm;
+  }
+  .intern h4 { margin: 0 0 1.5mm; color: var(--bad); font-size: 13pt; }
+  .intern p { margin: 0; font-size: 11pt; }
+  .intern img { width: 55mm; flex: none; border-radius: 2mm; border: .35mm solid var(--line); }
+  footer {
+    margin-top: auto; border-top: .35mm solid var(--line); padding-top: 3mm;
+    color: var(--muted); font-size: 10pt;
+  }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="rainbow"></div>
+  <div class="top">
+  <div>
+  <header>
+    <img src="../icons/icon-192.png" alt="">
+    <div>
+      <h1>Handout HNO Mini-App</h1>
+      <div class="sub">Installation als App auf dem Homescreen · Glossar, Karteikarten &amp; Quiz für die HNO-Station</div>
+    </div>
+  </header>
+
+  <div class="intro"><div>
+    Die <b>HNO Mini-App</b> ist eine kostenlose Lernhilfe zu Fachbegriffen und Abkürzungen der HNO-Station.
+    Sie läuft direkt im Browser, lässt sich aber wie eine normale App auf dem Homescreen installieren und
+    danach auch <b>offline</b> nutzen. Kein App-Store nötig – die Installation dauert weniger als eine Minute.
+  </div></div>
+  </div>
+  <div class="qrbox">
+    <img src="../qr-code.png" alt="QR-Code">
+    <div>
+      <div class="url">lucagiona.github.io/<wbr>hno_miniapp</div>
+      <div class="label">Mit der Kamera scannen oder im Browser öffnen</div>
+    </div>
+  </div>
+  </div>
+
+  <div class="pill">IPHONE · SAFARI</div>
+
+  <div class="steps">
+    <div class="step">
+      <h2><span class="num">1</span>App-Seite öffnen</h2>
+      <p>Scanne den QR-Code oben rechts oder öffne <b>lucagiona.github.io/hno_miniapp</b> in Safari.
+        Die App startet mit dem Glossar.</p>
+      <div class="shots"><div class="shot"><img src="image002.png" alt=""></div></div>
+    </div>
+
+    <div class="step">
+      <h2><span class="num">2</span>Teilen-Symbol antippen</h2>
+      <p>Unten in der <b>Mitte</b> auf das <b>Teilen-Symbol</b> tippen, dann <b>„Zum Home-Bildschirm“</b>
+        wählen. <i>Nicht</i> das Tab-Symbol unten rechts nehmen.</p>
+      <div class="shots">
+        <div class="shot right"><img src="image005.png" alt=""><div class="cap">✓ richtig: Teilen</div></div>
+        <div class="shot wrong"><img src="image006.png" alt=""><div class="cap">✗ falsch: Tabs</div></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <h2><span class="num">3</span>Hinzufügen bestätigen</h2>
+      <p>Der Name <b>„HNO“</b> ist bereits eingetragen. Einfach oben rechts auf <b>„Hinzufügen“</b> tippen.</p>
+      <div class="shots"><div class="shot"><img src="image004.png" alt=""></div></div>
+    </div>
+
+    <div class="step">
+      <h2><span class="num">4</span>Fertig!</h2>
+      <p>Das Symbol <b>„HNO“</b> erscheint jetzt auf dem Homescreen – antippen genügt. Die App öffnet sich wie
+        jede andere App, auch ohne Internetverbindung.</p>
+      <div class="shots"><div class="shot"><img src="image001.png" alt=""></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="rainbow"></div>
+
+  <div class="row">
+    <div class="other">
+      <h3>Andere Geräte</h3>
+      <p><b>Android (Chrome):</b> Seite öffnen → Menü ⋮ oben rechts → <b>„App installieren“</b>.</p>
+    </div>
+    <div class="other">
+      <h3>&nbsp;</h3>
+      <p><b>Am PC/Mac:</b> Läuft genauso im Desktop-Browser und lässt sich dort ebenfalls installieren:</p>
+      <p>• <b>Chrome/Edge:</b> Installieren-Symbol in der Adressleiste<br>
+         • <b>Safari/Mac:</b> Ablage → „Zum Dock hinzufügen“</p>
+    </div>
+  </div>
+
+  <h3>An Kolleginnen &amp; Kollegen weitergeben</h3>
+  <div class="share" style="margin-bottom:5mm">
+    <div class="shot"><img src="image003.png" alt=""><div class="cap">Info-Dialog in der App</div></div>
+    <div>
+      <p style="margin-top:0">In der App unten auf <b>„Info“</b> tippen: Dort liegen derselbe Link und QR-Code
+        bereit, um die App direkt weiterzuempfehlen.</p>
+      <p>Mit <b>„Teilen“</b> lässt sich der Link auch direkt per Nachricht oder E-Mail verschicken.</p>
+    </div>
+  </div>
+
+  <div class="intern">
+    <div>
+      <h4>Hinweis (intern): Zugriff über Dienst-PC</h4>
+      <p>Auf Dienstrechnern im Haus (z. B. bei Vivantes) blockiert die IT-Sicherheit den Aufruf der App-Seite
+        automatisch (Ransomware-Schutz, Kategorie „github-pages“) – das betrifft nur den Arbeitsplatz-PC, nicht
+        dein privates Smartphone. Für die Installation daher am besten das eigene Handy nutzen. Wird der Zugriff
+        dienstlich benötigt, lässt er sich über das Self-Service-Portal bzw. das IT-Servicecenter freigeben.</p>
+    </div>
+    <img src="vivantes_fehlermeldung.png" alt="">
+  </div>
+
+  <footer>
+    Nur Lernhilfe – ersetzt keine Dienstanweisungen oder Standards des Hauses. Der Lernfortschritt wird nur lokal
+    auf dem jeweiligen Gerät gespeichert.<br>
+    Fehler gefunden oder Feedback? Bitte an <b>luca@senzproduction.com</b> senden.
+  </footer>
+</section>
+
+</body>
+</html>
